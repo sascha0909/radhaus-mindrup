@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radhaus Heino Mindrup – Fahrradwerkstatt Warsingsfehn</title>
+  <meta name="description" content="Ihr Fahrrad-Experte in Moormerland-Warsingsfehn. Reparatur, Inspektion, E-Bike Service. ★ 4.8/5 bei 58 Google-Bewertungen. Tel: 04954 936174" />
+  <meta name="keywords" content="Fahrradwerkstatt Warsingsfehn, Fahrradreparatur Moormerland, E-Bike Reparatur, Radhaus Mindrup" />
+  <meta property="og:title" content="Radhaus Heino Mindrup – Fahrradwerkstatt" />
+  <meta property="og:description" content="Fahrradwerkstatt in Warsingsfehn. Schnell, fair, kompetent. ★ 4.8 Google-Bewertung" />
+  <meta property="og:locale" content="de_DE" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Radhaus Heino Mindrup",
+    "telephone": "+49-4954-936174",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Königsstraße 2",
+      "addressLocality": "Moormerland-Warsingsfehn",
+      "postalCode": "26802",
+      "addressCountry": "DE"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "58",
+      "bestRating": "5"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00" }
+    ]
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #0f172a; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    :root {
+      --blue: #0ea5e9;
+      --blue-dark: #0284c7;
+      --orange: #f97316;
+      --orange-dark: #ea6c0a;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ─── NAVBAR ─── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .navbar.scrolled {
+      background: rgba(248,250,252,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .navbar-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 70px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon {
+      width: 36px; height: 36px; background: var(--blue); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width: 20px; height: 20px; color: white; fill: none; stroke: white; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .logo-text { line-height: 1.2; }
+    .logo-text strong { display: block; font-size: 15px; font-weight: 700; color: #0f172a; }
+    .logo-text span { display: block; font-size: 11px; color: var(--slate-500); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--slate-500); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--blue); }
+    .btn-call {
+      display: inline-flex; align-items: center; gap: 8px;
+      height: 40px; padding: 0 18px;
+      background: var(--orange); color: white;
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      border-radius: 10px; transition: background 0.2s;
+    }
+    .btn-call:hover { background: var(--orange-dark); }
+    .btn-call svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 8px; border-radius: 8px;
+    }
+    .hamburger span { display: block; width: 22px; height: 2px; background: #0f172a; border-radius: 2px; transition: all 0.3s; }
+    .mobile-menu {
+      display: none; flex-direction: column; gap: 4px;
+      padding: 12px 0 16px;
+      background: white; border-top: 1px solid var(--slate-200);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 12px 16px; text-decoration: none; font-weight: 500;
+      color: #0f172a; border-radius: 10px; transition: background 0.2s;
+    }
+    .mobile-menu a:hover { background: #f0f9ff; color: var(--blue); }
+    .mobile-menu .btn-call-mobile {
+      margin: 8px 16px 0;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      height: 48px; background: var(--orange); color: white;
+      font-weight: 600; border-radius: 12px; text-decoration: none;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; overflow: hidden;
+      background: linear-gradient(108deg, #f8fafc 52%, var(--blue) 52%);
+    }
+    .hero-bike {
+      position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+      width: 52%; max-width: 680px; opacity: 0.07; color: #0c3552;
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 2; padding: 120px 0 80px; max-width: 680px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #e0f2fe; color: #0369a1; font-size: 11px;
+      font-weight: 700; padding: 6px 14px; border-radius: 999px;
+      text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 24px;
+    }
+    .hero-badge svg { width: 14px; height: 14px; fill: var(--orange); }
+    .hero-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 700; line-height: 0.95; letter-spacing: -0.01em;
+      color: #0f172a; margin-bottom: 24px;
+    }
+    .hero-title .accent { color: var(--blue); display: block; }
+    .hero-sub {
+      font-size: 1.125rem; color: var(--slate-500); margin-bottom: 40px;
+      line-height: 1.7; max-width: 520px;
+    }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 40px; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      height: 56px; padding: 0 30px;
+      background: var(--orange); color: white;
+      font-size: 16px; font-weight: 700; text-decoration: none;
+      border-radius: 14px; transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 8px 20px rgba(249,115,22,0.3);
+    }
+    .btn-primary:hover { background: var(--orange-dark); transform: scale(1.02); }
+    .btn-primary svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      height: 56px; padding: 0 30px;
+      border: 2.5px solid var(--blue); color: var(--blue);
+      font-size: 16px; font-weight: 700; text-decoration: none;
+      border-radius: 14px; transition: all 0.2s;
+    }
+    .btn-secondary:hover { background: var(--blue); color: white; transform: scale(1.02); }
+    .btn-secondary svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .trust-bar { display: flex; flex-wrap: wrap; gap: 24px; }
+    .trust-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--slate-500); font-weight: 500; }
+    .trust-item svg { width: 16px; height: 16px; fill: none; stroke: var(--blue); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: 0.7; }
+
+    /* ─── SECTION SHARED ─── */
+    .section { padding: 80px 0; }
+    .section-overline {
+      font-size: 12px; font-weight: 700; color: var(--blue);
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+      color: #0f172a; line-height: 1.15; margin-bottom: 16px;
+    }
+    .section-sub { font-size: 1.0625rem; color: var(--slate-500); line-height: 1.7; max-width: 560px; }
+
+    /* ─── SERVICES ─── */
+    .services { background: white; }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px;
+    }
+    .service-card {
+      background: white; border: 1px solid var(--slate-200);
+      border-radius: 20px; padding: 28px; cursor: default;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(14,165,233,0.12);
+    }
+    .service-icon {
+      width: 48px; height: 48px; background: #e0f2fe;
+      border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .service-icon svg { width: 24px; height: 24px; fill: none; stroke: var(--blue); stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+    .service-title { font-weight: 700; font-size: 17px; color: #0f172a; margin-bottom: 10px; }
+    .service-desc { font-size: 14px; color: var(--slate-500); line-height: 1.65; }
+    .services-cta { margin-top: 48px; text-align: center; }
+    .services-cta p { color: var(--slate-500); margin-bottom: 18px; }
+
+    /* ─── ABOUT ─── */
+    .about { background: #f8fafc; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-text .section-title .blue { color: var(--blue); }
+    .about-body { color: var(--slate-500); line-height: 1.75; margin-bottom: 16px; }
+    .stats-row {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; padding: 28px 0; border-top: 1px solid var(--slate-200); margin: 28px 0 0;
+    }
+    .stat { text-align: center; }
+    .stat-value {
+      font-family: 'Oswald', sans-serif; font-size: 2.5rem; font-weight: 700;
+      color: var(--blue); line-height: 1; margin-bottom: 6px;
+    }
+    .stat-label { font-size: 12px; color: var(--slate-500); font-weight: 500; }
+    .about-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      height: 48px; padding: 0 22px;
+      border: 2px solid var(--slate-200); color: var(--slate-500);
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      border-radius: 12px; transition: all 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+    .btn-outline svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .about-visual {
+      position: relative;
+    }
+    .about-card {
+      background: #e0f2fe; border-radius: 28px; overflow: hidden;
+      aspect-ratio: 4/5; max-width: 380px; margin: 0 auto; position: relative;
+    }
+    .about-card-dots {
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(14,165,233,0.15) 1.5px, transparent 1.5px);
+      background-size: 26px 26px;
+    }
+    .about-illustration {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center; padding: 40px;
+    }
+    .about-illustration svg { width: 100%; height: 100%; }
+    .about-caption {
+      position: absolute; bottom: 0; left: 0; right: 0; padding: 20px;
+    }
+    .about-caption-inner {
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(8px);
+      border-radius: 16px; padding: 16px; text-align: center;
+    }
+    .about-caption-inner small { font-size: 11px; color: var(--slate-400); }
+    .about-caption-inner strong { display: block; font-size: 15px; color: #0f172a; margin: 2px 0; }
+    .about-caption-inner span { font-size: 12px; color: var(--slate-500); }
+    .about-badge {
+      position: absolute; bottom: -16px; right: -16px;
+      background: var(--orange); color: white;
+      border-radius: 16px; padding: 12px 18px;
+      box-shadow: 0 8px 24px rgba(249,115,22,0.3);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .about-badge svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .about-badge-text strong { display: block; font-size: 13px; font-weight: 700; }
+    .about-badge-text small { font-size: 11px; opacity: 0.85; }
+
+    /* ─── REVIEWS ─── */
+    .reviews { background: #0f172a; }
+    .reviews .section-overline { color: var(--blue); }
+    .reviews .section-title { color: white; }
+    .reviews-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; margin-bottom: 56px; }
+    .stars { display: flex; gap: 4px; }
+    .star { width: 20px; height: 20px; fill: #fb923c; }
+    .reviews-meta-text { font-size: 14px; color: var(--slate-400); }
+    .reviews-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; color: var(--blue); text-decoration: none; transition: color 0.2s;
+    }
+    .reviews-link:hover { color: #7dd3fc; }
+    .reviews-link svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .review-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px; padding: 28px;
+      display: flex; flex-direction: column; gap: 18px;
+    }
+    .review-stars { display: flex; gap: 3px; }
+    .review-star { width: 16px; height: 16px; fill: #fb923c; }
+    .review-text { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.7; font-style: italic; flex: 1; }
+    .review-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .review-author { font-weight: 600; color: white; font-size: 14px; }
+    .review-date { font-size: 12px; color: var(--slate-400); }
+
+    /* ─── FOOTER ─── */
+    .footer { background: #0f172a; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; padding: 64px 0; }
+    .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .footer-tagline { font-size: 14px; color: var(--slate-400); line-height: 1.7; max-width: 260px; margin-bottom: 18px; }
+    .footer-stars { display: flex; align-items: center; gap: 4px; }
+    .footer-star { width: 16px; height: 16px; fill: #fb923c; }
+    .footer-rating-text { font-size: 13px; color: var(--slate-400); margin-left: 6px; }
+    .footer-heading {
+      font-size: 11px; font-weight: 700; color: white;
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;
+    }
+    .footer-contact-item {
+      display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;
+    }
+    .footer-contact-item svg { width: 16px; height: 16px; fill: none; stroke: var(--slate-400); stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; margin-top: 2px; }
+    .footer-phone { color: var(--blue); font-weight: 600; text-decoration: none; font-size: 15px; transition: color 0.2s; }
+    .footer-phone:hover { color: #7dd3fc; }
+    .footer-addr { font-size: 14px; color: var(--slate-400); }
+    .footer-maps { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--blue); text-decoration: none; margin-top: 6px; transition: color 0.2s; }
+    .footer-maps:hover { color: #7dd3fc; }
+    .footer-maps svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .footer-hours-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+    .footer-hours-item svg { width: 16px; height: 16px; fill: none; stroke: var(--slate-400); stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; margin-top: 2px; }
+    .footer-hours-days { font-size: 14px; color: var(--slate-400); flex: 1; }
+    .footer-hours-time { font-size: 14px; font-weight: 500; color: white; }
+    .footer-hours-time.closed { color: rgba(248,113,113,0.7); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+      padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 12px; color: var(--slate-400);
+    }
+    .footer-bottom a { color: var(--slate-400); text-decoration: none; transition: color 0.2s; }
+    .footer-bottom a:hover { color: var(--slate-200); }
+
+    /* ─── SCROLL ANIMATIONS ─── */
+    .animate {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1);
+    }
+    .animate.visible { opacity: 1; transform: translateY(0); }
+    .animate-delay-1 { transition-delay: 0.1s; }
+    .animate-delay-2 { transition-delay: 0.2s; }
+    .animate-delay-3 { transition-delay: 0.3s; }
+    .animate-delay-4 { transition-delay: 0.4s; }
+    .animate-delay-5 { transition-delay: 0.5s; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-badge { bottom: 16px; right: 16px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .btn-call { display: none; }
+      .hamburger { display: flex; }
+      .services-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .hero-bike { width: 100%; opacity: 0.04; }
+      .section { padding: 64px 0; }
+    }
+    @media (max-width: 640px) {
+      .hero-ctas { flex-direction: column; }
+      .btn-primary, .btn-secondary { justify-content: center; }
+      .stats-row { grid-template-columns: repeat(3,1fr); gap: 8px; }
+      .stat-value { font-size: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+    @media (min-width: 768px) {
+      .services-grid { grid-template-columns: repeat(2,1fr); }
+      .reviews-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (min-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(3,1fr); }
+      .reviews-grid { grid-template-columns: repeat(3,1fr); }
+      .section { padding: 96px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAVBAR ─── -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="#" class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5 10 7l4 5 2-3 2 8M10 7h4"/></svg>
+          </div>
+          <div class="logo-text"><strong>Radhaus Mindrup</strong><span>Warsingsfehn</span></div>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#ueber-uns">Über uns</a></li>
+          <li><a href="#bewertungen">Bewertungen</a></li>
+        </ul>
+        <a href="tel:04954936174" class="btn-call">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.6 19.79 19.79 0 01.82 2.06 2 2 0 012.82 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.25v1.67z"/></svg>
+          04954 936174
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menü">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="container" style="display:flex;flex-direction:column;gap:4px;">
+        <a href="#leistungen" class="mobile-link">Leistungen</a>
+        <a href="#ueber-uns" class="mobile-link">Über uns</a>
+        <a href="#bewertungen" class="mobile-link">Bewertungen</a>
+        <a href="tel:04954936174" class="btn-call-mobile" style="display:flex;align-items:center;justify-content:center;gap:8px;height:48px;background:var(--orange);color:white;font-weight:600;border-radius:12px;text-decoration:none;margin-top:8px;">
+          <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:white;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.6 19.79 19.79 0 01.82 2.06 2 2 0 012.82 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.25v1.67z"/></svg>
+          04954 936174
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ─── HERO ─── -->
+    <section class="hero">
+      <div class="hero-bike" aria-hidden="true">
+        <svg viewBox="0 0 520 330" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="130" cy="220" r="90" stroke="currentColor" stroke-width="9"/>
+          <circle cx="390" cy="220" r="90" stroke="currentColor" stroke-width="9"/>
+          <circle cx="130" cy="220" r="12" stroke="currentColor" stroke-width="7"/>
+          <circle cx="390" cy="220" r="12" stroke="currentColor" stroke-width="7"/>
+          <circle cx="265" cy="220" r="14" stroke="currentColor" stroke-width="7"/>
+          <line x1="142" y1="220" x2="251" y2="220" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+          <line x1="142" y1="212" x2="210" y2="135" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+          <line x1="210" y1="135" x2="265" y2="220" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+          <line x1="340" y1="122" x2="265" y2="220" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+          <line x1="210" y1="135" x2="340" y2="122" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+          <line x1="340" y1="122" x2="390" y2="215" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+          <line x1="338" y1="122" x2="348" y2="92" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+          <line x1="343" y1="92" x2="343" y2="68" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+          <line x1="316" y1="68" x2="370" y2="68" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+          <line x1="207" y1="135" x2="207" y2="112" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+          <path d="M182 112 Q195 106 207 108 Q219 106 232 112" stroke="currentColor" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <line x1="130" y1="220" x2="170" y2="140" stroke="currentColor" stroke-width="2.5" stroke-opacity="0.5"/>
+          <line x1="130" y1="220" x2="200" y2="210" stroke="currentColor" stroke-width="2.5" stroke-opacity="0.5"/>
+          <line x1="130" y1="220" x2="170" y2="298" stroke="currentColor" stroke-width="2.5" stroke-opacity="0.5"/>
+          <line x1="130" y1="220" x2="60" y2="260" stroke="currentColor" stroke-width="2.5" stroke-opacity="0.5"/>
+          <line x1="130" y1="220" x2="60" y2="178" stroke="currentColor" stroke-width="2.5" stroke-opacity="0.5"/>
+          <line x1="390" y1="220" x2="430" y2="140" stroke="currentColor" stroke-width="2.5" stroke-opacity="0.5"/>
+          <line x1="390" y1="220" x2="460" y2="210" stroke="currentColor" stroke-width="2.5" stroke-opacity="0.5"/>
+          <line x1="390" y1="220" x2="430" y2="298" stroke="currentColor" stroke-width="2.5" stroke-opacity="0.5"/>
+          <line x1="390" y1="220" x2="320" y2="260" stroke="currentColor" stroke-width="2.5" stroke-opacity="0.5"/>
+          <line x1="390" y1="220" x2="320" y2="178" stroke="currentColor" stroke-width="2.5" stroke-opacity="0.5"/>
+          <line x1="265" y1="220" x2="245" y2="248" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+          <line x1="265" y1="220" x2="285" y2="192" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+          <line x1="237" y1="248" x2="253" y2="248" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+          <line x1="277" y1="192" x2="293" y2="192" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge animate">
+            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            4.8 von 5 – 58 Google-Bewertungen
+          </div>
+          <h1 class="hero-title animate animate-delay-1">
+            Ihr Fahrrad-<span class="accent">Experte.</span>
+          </h1>
+          <p class="hero-sub animate animate-delay-2">
+            Reparatur, Inspektion und E-Bike Service in Warsingsfehn. Schnell, fair und persönlich – direkt bei Ihnen um die Ecke.
+          </p>
+          <div class="hero-ctas animate animate-delay-3">
+            <a href="tel:04954936174" class="btn-primary">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.6 19.79 19.79 0 01.82 2.06 2 2 0 012.82 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.25v1.67z"/></svg>
+              Jetzt anrufen
+            </a>
+            <a href="https://www.google.com/maps/search/Königsstraße+2+26802+Moormerland-Warsingsfehn" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Route planen
+            </a>
+          </div>
+          <div class="trust-bar animate animate-delay-4">
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Schnelle Reparatur
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+              Faire Preise
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Lokal &amp; persönlich
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SERVICES ─── -->
+    <section class="section services" id="leistungen">
+      <div class="container">
+        <div class="animate"><p class="section-overline">Was wir für Sie tun</p></div>
+        <h2 class="section-title animate animate-delay-1">Unsere Leistungen</h2>
+        <p class="section-sub animate animate-delay-2">Vom schnellen Reifentausch bis zur E-Bike-Komplettinspektion – wir kümmern uns um alles rund ums Fahrrad.</p>
+        <div class="services-grid">
+          <div class="service-card animate animate-delay-1">
+            <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+            <div class="service-title">Fahrradreparatur</div>
+            <p class="service-desc">Schnelle und zuverlässige Reparatur aller Fahrradtypen. Vom platten Reifen bis zum Komplettservice – sofort und ohne Wartezeit.</p>
+          </div>
+          <div class="service-card animate animate-delay-2">
+            <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+            <div class="service-title">Inspektionen</div>
+            <p class="service-desc">Umfassende Sicherheitsprüfung und Einstellung aller Komponenten. Damit Sie sorglos und sicher unterwegs sind.</p>
+          </div>
+          <div class="service-card animate animate-delay-3">
+            <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <div class="service-title">Reifenwechsel</div>
+            <p class="service-desc">Reifen- und Schlauchtausch für alle Fahrradgrößen. Direkt vor Ort und ohne lange Vorlaufzeit.</p>
+          </div>
+          <div class="service-card animate animate-delay-1">
+            <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M16.5 9.4l-9-5.19M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+            <div class="service-title">Zubehör &amp; Ersatzteile</div>
+            <p class="service-desc">Hochwertige Ersatzteile und praktisches Zubehör für jedes Fahrrad. Alles direkt ab Lager verfügbar.</p>
+          </div>
+          <div class="service-card animate animate-delay-2">
+            <div class="service-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+            <div class="service-title">E-Bike Service</div>
+            <p class="service-desc">Wartung und Reparatur von E-Bikes aller Hersteller. Akku, Motor, Steuerung – wir kennen uns aus.</p>
+          </div>
+          <div class="service-card animate animate-delay-3">
+            <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+            <div class="service-title">Beratung</div>
+            <p class="service-desc">Persönliche und ehrliche Beratung zu Kauf, Ausstattung und Anpassungen. Ohne Verkaufsdruck.</p>
+          </div>
+        </div>
+        <div class="services-cta animate">
+          <p>Sie sind sich nicht sicher, was Ihr Fahrrad braucht?</p>
+          <a href="tel:04954936174" class="btn-primary" style="display:inline-flex;">Einfach anrufen – wir beraten Sie!</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ABOUT ─── -->
+    <section class="section about" id="ueber-uns">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <div class="animate"><p class="section-overline">Über uns</p></div>
+            <h2 class="section-title animate animate-delay-1">Heino Mindrup –<br><span class="blue" style="color:var(--blue);">Mechaniker mit Herz</span></h2>
+            <p class="about-body animate animate-delay-2">Seit mehr als 25 Jahren kümmere ich mich in Warsingsfehn um alles, was zwei Räder hat. Ob klassisches Cityrad, Mountainbike oder modernes E-Bike – ich bringe Ihr Fahrrad wieder in Top-Form.</p>
+            <p class="about-body animate animate-delay-3">Bei mir gibt es keine langen Wartezeiten und keine überteuerten Rechnungen. Sie kommen rein, ich schaue es mir an – und meistens fahren Sie noch am selben Tag wieder nach Hause.</p>
+            <div class="stats-row animate animate-delay-2">
+              <div class="stat"><div class="stat-value" data-countup="4.8" data-decimals="1">4.8</div><div class="stat-label">Google-Bewertung</div></div>
+              <div class="stat"><div class="stat-value" data-countup="58" data-decimals="0">58</div><div class="stat-label">Kundenstimmen</div></div>
+              <div class="stat"><div class="stat-value" data-countup="25" data-decimals="0">25</div><div class="stat-label">Jahre Erfahrung</div></div>
+            </div>
+            <div class="about-actions animate animate-delay-3">
+              <a href="tel:04954936174" class="btn-primary" style="height:48px;font-size:14px;">
+                <svg style="width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.6 19.79 19.79 0 01.82 2.06 2 2 0 012.82 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.25v1.67z"/></svg>
+                04954 936174
+              </a>
+              <a href="https://www.google.com/maps/search/Königsstraße+2+26802+Moormerland-Warsingsfehn" target="_blank" rel="noopener noreferrer" class="btn-outline">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Königsstraße 2, Warsingsfehn
+              </a>
+            </div>
+          </div>
+          <div class="about-visual animate animate-delay-2">
+            <div class="about-card">
+              <div class="about-card-dots"></div>
+              <div class="about-illustration">
+                <svg viewBox="0 0 340 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="170" cy="80" r="50" stroke="#0ea5e9" stroke-width="8"/>
+                  <path d="M120 160 Q170 140 220 160 L240 280 H100 Z" stroke="#0ea5e9" stroke-width="7" fill="none" stroke-linejoin="round"/>
+                  <path d="M120 170 Q90 200 75 240" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round" fill="none"/>
+                  <path d="M220 170 Q250 200 265 240" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round" fill="none"/>
+                  <path d="M130 280 L115 370" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round"/>
+                  <path d="M210 280 L225 370" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round"/>
+                  <path d="M108 370 L130 370" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round"/>
+                  <path d="M218 370 L240 370" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round"/>
+                  <path d="M265 240 Q275 230 285 235 L310 260 Q315 268 308 275 L295 288 Q287 293 280 286 L255 261 Z" stroke="#f97316" stroke-width="6" fill="none" stroke-linejoin="round"/>
+                  <line x1="290" y1="270" x2="330" y2="310" stroke="#f97316" stroke-width="7" stroke-linecap="round"/>
+                  <path d="M152 88 Q170 102 188 88" stroke="#0ea5e9" stroke-width="5" stroke-linecap="round" fill="none"/>
+                  <circle cx="155" cy="72" r="5" fill="#0ea5e9"/>
+                  <circle cx="185" cy="72" r="5" fill="#0ea5e9"/>
+                </svg>
+              </div>
+              <div class="about-caption">
+                <div class="about-caption-inner">
+                  <small>Foto folgt</small>
+                  <strong>Heino Mindrup</strong>
+                  <span>Inhaber &amp; Fahrradmechaniker</span>
+                </div>
+              </div>
+            </div>
+            <div class="about-badge">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+              <div class="about-badge-text"><strong>Ihr Ansprechpartner</strong><small>vor Ort in Warsingsfehn</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── REVIEWS ─── -->
+    <section class="section reviews" id="bewertungen">
+      <div class="container">
+        <div class="animate"><p class="section-overline">Was unsere Kunden sagen</p></div>
+        <h2 class="section-title animate animate-delay-1">4.8 Sterne auf Google</h2>
+        <div class="reviews-meta animate animate-delay-2">
+          <div class="stars">
+            <svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <span class="reviews-meta-text">Basierend auf 58 Bewertungen</span>
+          <a href="https://www.google.com/maps/search/Radhaus+Heino+Mindrup+Warsingsfehn" target="_blank" rel="noopener noreferrer" class="reviews-link">
+            Alle Bewertungen auf Google
+            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+        <div class="reviews-grid">
+          <div class="review-card animate animate-delay-1">
+            <div class="review-stars"><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+            <p class="review-text">"Volle fünf Sterne. Hatte Probleme mit meiner Gangschaltung. Bin einfach hingefahren und er hat sich sofort darum gekümmert. Ruck Zuck war alles erledigt. Sehr freundlich und sehr kompetent."</p>
+            <div class="review-footer"><span class="review-author">Klaus J.</span><span class="review-date">vor 8 Monaten</span></div>
+          </div>
+          <div class="review-card animate animate-delay-2">
+            <div class="review-stars"><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+            <p class="review-text">"Schnelle und saubere Arbeit – bei vielen größeren Werkstätten hätte ich in der Zeit nicht mal einen Termin bekommen. Mega freundlich, weiß genau was er tut. Absolute Empfehlung!"</p>
+            <div class="review-footer"><span class="review-author">Martin R.</span><span class="review-date">vor einem Jahr</span></div>
+          </div>
+          <div class="review-card animate animate-delay-3">
+            <div class="review-stars"><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+            <p class="review-text">"Tolles kleines Fahrradgeschäft mit kompetenten und schnellen Mitarbeitern. Faire Preise, keine unnötigen Extras. Endlich ein Fahrradladen, dem man vertrauen kann."</p>
+            <div class="review-footer"><span class="review-author">Sandra M.</span><span class="review-date">vor 3 Monaten</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <div class="logo-icon"><svg viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5 10 7l4 5 2-3 2 8M10 7h4"/></svg></div>
+            <span style="font-weight:700;font-size:16px;color:white;">Radhaus Mindrup</span>
+          </div>
+          <p class="footer-tagline">Ihr persönlicher Fahrrad-Experte in Moormerland-Warsingsfehn. Schnell, kompetent und fair – seit über 25 Jahren.</p>
+          <div class="footer-stars">
+            <svg class="footer-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="footer-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="footer-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="footer-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="footer-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <span class="footer-rating-text">4.8 (58 Bewertungen)</span>
+          </div>
+        </div>
+        <div>
+          <p class="footer-heading">Kontakt &amp; Anfahrt</p>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" style="stroke:var(--blue)"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.6 19.79 19.79 0 01.82 2.06 2 2 0 012.82 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.25v1.67z"/></svg>
+            <a href="tel:04954936174" class="footer-phone">04954 936174</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <p class="footer-addr">Königsstraße 2<br>26802 Moormerland-Warsingsfehn</p>
+          </div>
+          <a href="https://www.google.com/maps/search/Königsstraße+2+26802+Moormerland-Warsingsfehn" target="_blank" rel="noopener noreferrer" class="footer-maps">
+            Route planen
+            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+        <div>
+          <p class="footer-heading">Öffnungszeiten</p>
+          <div class="footer-hours-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span class="footer-hours-days">Dienstag – Freitag</span>
+            <span class="footer-hours-time">09:00 – 18:00 Uhr</span>
+          </div>
+          <div class="footer-hours-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span class="footer-hours-days">Samstag</span>
+            <span class="footer-hours-time">09:00 – 13:00 Uhr</span>
+          </div>
+          <div class="footer-hours-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span class="footer-hours-days">Montag</span>
+            <span class="footer-hours-time closed">Geschlossen</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Radhaus Heino Mindrup. Alle Rechte vorbehalten.</span>
+        <a href="#impressum">Impressum</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 30);
+    }, { passive: true });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+    document.querySelectorAll('.mobile-link, .btn-call-mobile').forEach(el => {
+      el.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+
+    // Hero animations on load
+    document.querySelectorAll('.hero .animate').forEach(el => {
+      setTimeout(() => el.classList.add('visible'), 100);
+    });
+
+    // Count-up animation
+    function countUp(el, end, decimals, duration) {
+      let startTime = null;
+      const step = (timestamp) => {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = eased * end;
+        el.textContent = decimals > 0 ? value.toFixed(decimals) : Math.floor(value);
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = decimals > 0 ? end.toFixed(decimals) : end;
+      };
+      requestAnimationFrame(step);
+    }
+
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const end = parseFloat(el.dataset.countup);
+          const decimals = parseInt(el.dataset.decimals || '0');
+          countUp(el, end, decimals, 1400);
+          countObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-countup]').forEach(el => countObserver.observe(el));
+  </script>
+</body>
+</html>

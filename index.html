@@ -4,926 +4,852 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KAGU E-BIKES – E-Bike Fachgeschäft Moormerland</title>
-  <meta name="description" content="Ihr E-Bike-Experte in Moormerland. Gazelle &amp; Pegasus, Probefahrten, Lieferservice. ★ 4,9/5 bei 43 Google-Bewertungen. Tel: 01520 5161641" />
+  <meta name="description" content="Ihr E-Bike-Experte in Moormerland. Gazelle & Pegasus, Probefahrten, Lieferservice. ★ 4,9/5 bei 43 Google-Bewertungen. Tel: 01520 5161641" />
   <meta name="keywords" content="E-Bike Moormerland, Gazelle E-Bike kaufen, Pegasus E-Bike, KAGU E-BIKES, Fahrrad Moormerland" />
-  <meta property="og:title" content="KAGU E-BIKES – E-Bike Fachgeschäft" />
-  <meta property="og:description" content="E-Bikes kaufen in Moormerland. Gazelle, Pegasus, Probefahrten. ★ 4,9 Google-Bewertung" />
+  <meta property="og:title" content="KAGU E-BIKES – E-Bike Fachgeschäft Moormerland" />
+  <meta property="og:description" content="E-Bikes kaufen in Moormerland. Gazelle & Pegasus, Probefahrten möglich, Lieferservice. ★ 4,9 Google-Bewertung" />
   <meta property="og:locale" content="de_DE" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "KAGU E-BIKES",
-    "telephone": "+49-1520-5161641",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Hauptstraße 169",
-      "addressLocality": "Moormerland",
-      "postalCode": "26802",
-      "addressCountry": "DE"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "43",
-      "bestRating": "5"
-    }
-  }
-  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"KAGU E-BIKES","telephone":"+49-1520-5161641","address":{"@type":"PostalAddress","streetAddress":"Hauptstraße 169","addressLocality":"Moormerland","postalCode":"26802","addressCountry":"DE"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"43","bestRating":"5"}}</script>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #060d18;
-      color: #e2eaf4;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:#060d18;color:#e2eaf4;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+    :root{
+      --blue:#0ea5e9;--blue-bright:#38bdf8;--blue-dim:rgba(14,165,233,0.12);--blue-glow:rgba(14,165,233,0.3);
+      --orange:#f97316;--orange-dark:#ea6c0a;--orange-glow:rgba(249,115,22,0.35);
+      --green:#22c55e;
+      --bg:#060d18;--bg2:#080f1e;--bg3:#0c1628;--card:rgba(11,22,44,0.8);
+      --border:rgba(255,255,255,0.06);--border-blue:rgba(14,165,233,0.2);
+      --text:#f0f6ff;--text-muted:#7a94b0;--text-dim:#3d5268;
     }
 
-    :root {
-      --blue: #0ea5e9;
-      --blue-bright: #38bdf8;
-      --blue-glow: rgba(14,165,233,0.35);
-      --orange: #f97316;
-      --orange-glow: rgba(249,115,22,0.4);
-      --bg: #060d18;
-      --bg2: #0a1424;
-      --bg3: #0e1b30;
-      --bg4: #111f38;
-      --card: rgba(14,30,58,0.7);
-      --border: rgba(255,255,255,0.07);
-      --border-blue: rgba(14,165,233,0.25);
-      --text: #e2eaf4;
-      --text-muted: #6b84a0;
-      --text-dim: #4a637d;
+    .container{max-width:1180px;margin:0 auto;padding:0 1.25rem}
+
+    /* ── KEYFRAMES ─────────────────────── */
+    @keyframes spin-slow{to{transform:rotate(360deg)}}
+    @keyframes spin-rev{to{transform:rotate(-360deg)}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+    @keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(249,115,22,.5)}70%{box-shadow:0 0 0 14px rgba(249,115,22,0)}100%{box-shadow:0 0 0 0 rgba(249,115,22,0)}}
+    @keyframes glow-btn{0%,100%{box-shadow:0 0 20px rgba(249,115,22,.35),0 4px 24px rgba(249,115,22,.2)}50%{box-shadow:0 0 35px rgba(249,115,22,.55),0 4px 32px rgba(249,115,22,.3)}}
+    @keyframes shimmer{from{background-position:-400px 0}to{background-position:400px 0}}
+    @keyframes chain{from{background-position-x:0}to{background-position-x:48px}}
+    @keyframes scan{0%{top:-5%}100%{top:105%}}
+    @keyframes appear{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes badge-pop{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-10px) rotate(-3deg)}}
+    @keyframes speed-lines{from{transform:translateX(0)}to{transform:translateX(80px)}}
+
+    .animate{opacity:0;transform:translateY(28px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
+    .animate.visible{opacity:1;transform:none}
+    .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.40s}
+
+    /* ── STICKY PHONE CTA (mobile) ─────── */
+    .sticky-cta{
+      display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;
+      padding:12px 16px 20px;
+      background:linear-gradient(to top,rgba(6,13,24,1) 0%,rgba(6,13,24,.95) 100%);
+      border-top:1px solid var(--border);
+    }
+    .sticky-cta a{
+      display:flex;align-items:center;justify-content:center;gap:10px;
+      height:52px;background:var(--orange);color:white;font-weight:700;font-size:16px;
+      text-decoration:none;border-radius:14px;
+      animation:glow-btn 2.5s ease-in-out infinite;
     }
 
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    /* ── NAVBAR ───────────────────────── */
+    .navbar{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s,box-shadow .3s}
+    .navbar.scrolled{background:rgba(6,13,24,.94);backdrop-filter:blur(18px);box-shadow:0 1px 0 rgba(14,165,233,.12)}
+    .navbar-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo-icon{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#0ea5e9,#0369a1);display:flex;align-items:center;justify-content:center;box-shadow:0 0 14px rgba(14,165,233,.35)}
+    .logo-icon svg{width:20px;height:20px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .logo-text strong{display:block;font-size:15px;font-weight:800;color:var(--text);letter-spacing:-.01em}
+    .logo-text span{display:block;font-size:11px;color:var(--text-muted)}
+    .nav-links{display:flex;gap:28px;list-style:none}
+    .nav-links a{text-decoration:none;font-size:14px;font-weight:500;color:var(--text-muted);transition:color .2s;position:relative;padding-bottom:2px}
+    .nav-links a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1.5px;background:var(--blue);transform:scaleX(0);transition:transform .2s;transform-origin:left}
+    .nav-links a:hover{color:var(--blue-bright)}
+    .nav-links a:hover::after{transform:scaleX(1)}
+    .nav-phone{
+      display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 18px;
+      background:var(--orange);color:white;font-size:14px;font-weight:700;
+      text-decoration:none;border-radius:10px;transition:all .2s;
+      animation:glow-btn 2.5s ease-in-out infinite;
+    }
+    .nav-phone:hover{background:var(--orange-dark);transform:scale(1.03)}
+    .nav-phone svg{width:15px;height:15px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;border-radius:8px}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
+    .mobile-menu{display:none;flex-direction:column;gap:4px;padding:12px 0 16px;background:rgba(6,13,24,.98);border-top:1px solid var(--border);backdrop-filter:blur(12px)}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{padding:12px 16px;text-decoration:none;font-weight:500;color:var(--text-muted);border-radius:10px;transition:all .2s}
+    .mobile-menu a:hover{background:var(--bg3);color:var(--blue-bright)}
 
-    /* ─── KEYFRAMES ─── */
-    @keyframes spin-slow   { to { transform: rotate(360deg); } }
-    @keyframes spin-reverse{ to { transform: rotate(-360deg); } }
-    @keyframes float       { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-    @keyframes glow-pulse  { 0%,100% { box-shadow: 0 0 20px var(--orange-glow), 0 8px 25px rgba(249,115,22,0.2); }
-                             50%     { box-shadow: 0 0 35px var(--orange-glow), 0 8px 40px rgba(249,115,22,0.35); } }
-    @keyframes blue-pulse  { 0%,100% { box-shadow: 0 0 0 0 rgba(14,165,233,0); }
-                             50%     { box-shadow: 0 0 0 8px rgba(14,165,233,0.12); } }
-    @keyframes drift-lines { from { transform: translateX(0); } to { transform: translateX(82px); } }
-    @keyframes scan-line   { 0% { top: -10%; } 100% { top: 110%; } }
-    @keyframes badge-float { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-8px) rotate(-2deg); } }
-    @keyframes appear      {
-      from { opacity: 0; transform: translateY(40px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes chain-scroll {
-      from { background-position-x: 0; }
-      to   { background-position-x: 48px; }
-    }
+    /* ── CHAIN DIVIDER ────────────────── */
+    .divider{height:2px;background-image:repeating-linear-gradient(90deg,var(--blue) 0,var(--blue) 16px,transparent 16px,transparent 20px,rgba(14,165,233,.35) 20px,rgba(14,165,233,.35) 36px,transparent 36px,transparent 40px,var(--blue) 40px,var(--blue) 48px,transparent 48px,transparent 52px);background-size:48px 2px;animation:chain 1.2s linear infinite;opacity:.4}
 
-    /* ─── NAVBAR ─── */
-    .navbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      transition: background 0.35s, box-shadow 0.35s;
-    }
-    .navbar.scrolled {
-      background: rgba(6,13,24,0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 1px 0 rgba(14,165,233,0.15);
-    }
-    .navbar-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      height: 70px;
-    }
-    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .logo-icon {
-      width: 36px; height: 36px;
-      background: linear-gradient(135deg, var(--blue), #0369a1);
-      border-radius: 10px; display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 0 12px var(--blue-glow);
-    }
-    .logo-icon svg { width: 20px; height: 20px; fill: none; stroke: white; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .logo-text { line-height: 1.2; }
-    .logo-text strong { display: block; font-size: 15px; font-weight: 700; color: var(--text); }
-    .logo-text span { display: block; font-size: 11px; color: var(--text-muted); }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a {
-      text-decoration: none; font-size: 14px; font-weight: 500;
-      color: var(--text-muted); transition: color 0.2s;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px;
-      background: var(--blue); transform: scaleX(0); transition: transform 0.25s;
-    }
-    .nav-links a:hover { color: var(--blue-bright); }
-    .nav-links a:hover::after { transform: scaleX(1); }
-    .btn-call {
-      display: inline-flex; align-items: center; gap: 8px;
-      height: 40px; padding: 0 18px;
-      background: var(--orange); color: white;
-      font-size: 14px; font-weight: 600; text-decoration: none;
-      border-radius: 10px; transition: all 0.2s;
-      animation: glow-pulse 3s ease-in-out infinite;
-    }
-    .btn-call:hover { background: #ea6c0a; transform: scale(1.04); }
-    .btn-call svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .hamburger {
-      display: none; flex-direction: column; gap: 5px; cursor: pointer;
-      background: none; border: none; padding: 8px; border-radius: 8px;
-    }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
-    .mobile-menu {
-      display: none; flex-direction: column; gap: 4px; padding: 12px 0 16px;
-      background: var(--bg2); border-top: 1px solid var(--border);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      padding: 12px 16px; text-decoration: none; font-weight: 500;
-      color: var(--text-muted); border-radius: 10px; transition: all 0.2s;
-    }
-    .mobile-menu a:hover { background: var(--bg3); color: var(--blue-bright); }
+    /* ── HERO ─────────────────────────── */
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:var(--bg)}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 75% 50%,rgba(14,165,233,.07) 0,transparent 65%),radial-gradient(ellipse 40% 40% at 15% 85%,rgba(249,115,22,.04) 0,transparent 60%);pointer-events:none}
+    .hero-lines{position:absolute;inset:0;overflow:hidden;pointer-events:none;opacity:.6}
+    .hero-lines::after{content:'';position:absolute;width:200%;height:100%;left:-50%;background:repeating-linear-gradient(108deg,transparent 0,transparent 76px,rgba(14,165,233,.018) 76px,rgba(14,165,233,.018) 78px);animation:speed-lines 6s linear infinite}
+    .hero-scan{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(14,165,233,.5),transparent);pointer-events:none;animation:scan 9s linear infinite}
+    .hero-wheel{position:absolute;right:-6vw;top:50%;transform:translateY(-50%);width:56vw;max-width:680px;pointer-events:none}
+    .spin-fwd{animation:spin-slow 26s linear infinite;transform-origin:center}
+    .spin-bk{animation:spin-rev 16s linear infinite;transform-origin:center}
 
-    /* ─── CHAIN DIVIDER ─── */
-    .chain-divider {
-      height: 3px;
-      background-image: repeating-linear-gradient(
-        90deg,
-        var(--blue) 0px, var(--blue) 16px,
-        transparent 16px, transparent 20px,
-        rgba(14,165,233,0.4) 20px, rgba(14,165,233,0.4) 36px,
-        transparent 36px, transparent 40px,
-        var(--blue) 40px, var(--blue) 48px,
-        transparent 48px, transparent 52px
-      );
-      background-size: 48px 3px;
-      animation: chain-scroll 1.2s linear infinite;
-      opacity: 0.5;
-    }
+    .hero-content{position:relative;z-index:10;padding:110px 0 80px;max-width:640px}
+    .hero-rating{display:inline-flex;align-items:center;gap:10px;margin-bottom:24px;background:rgba(14,165,233,.08);border:1px solid rgba(14,165,233,.2);padding:6px 14px;border-radius:99px;font-size:12px;font-weight:700;color:var(--blue-bright);text-transform:uppercase;letter-spacing:.07em;backdrop-filter:blur(8px)}
+    .hero-rating-stars{display:flex;gap:2px}
+    .hero-rating-stars svg{width:12px;height:12px;fill:#fb923c}
+    .hero-title{font-family:'Oswald',sans-serif;font-size:clamp(3.2rem,8.5vw,7rem);font-weight:700;line-height:.9;letter-spacing:-.01em;color:var(--text);margin-bottom:24px}
+    .hero-title .line2{display:block;color:var(--blue);text-shadow:0 0 50px rgba(14,165,233,.45),0 0 100px rgba(14,165,233,.2)}
+    .hero-sub{font-size:1.1rem;color:var(--text-muted);max-width:480px;line-height:1.8;margin-bottom:36px}
+    .hero-sub strong{color:var(--text);font-weight:600}
 
-    /* ─── HERO ─── */
-    .hero {
-      position: relative; min-height: 100vh;
-      display: flex; align-items: center;
-      background: var(--bg);
-      overflow: hidden;
+    .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px}
+    .btn-call-hero{
+      display:inline-flex;align-items:center;gap:10px;height:58px;padding:0 32px;
+      background:var(--orange);color:white;font-size:17px;font-weight:800;
+      text-decoration:none;border-radius:15px;transition:all .2s;letter-spacing:-.01em;
+      animation:glow-btn 2.8s ease-in-out infinite;
     }
+    .btn-call-hero:hover{background:var(--orange-dark);transform:scale(1.03)}
+    .btn-call-hero svg{width:20px;height:20px;stroke:white;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .btn-route{
+      display:inline-flex;align-items:center;gap:10px;height:58px;padding:0 28px;
+      border:1.5px solid var(--border-blue);color:var(--blue-bright);
+      background:rgba(14,165,233,.07);font-size:16px;font-weight:700;
+      text-decoration:none;border-radius:15px;transition:all .2s;backdrop-filter:blur(8px);
+    }
+    .btn-route:hover{background:rgba(14,165,233,.16);border-color:var(--blue);transform:scale(1.02)}
+    .btn-route svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
-    /* Radial blue glow top-right */
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 70% 80% at 80% 40%, rgba(14,165,233,0.08) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 50% at 10% 80%, rgba(249,115,22,0.04) 0%, transparent 60%);
-      pointer-events: none;
-    }
+    .hero-trust{display:flex;flex-wrap:wrap;gap:20px}
+    .trust-pill{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;color:var(--text-muted);background:rgba(255,255,255,.04);border:1px solid var(--border);padding:6px 14px;border-radius:99px}
+    .trust-pill-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+    .trust-pill-dot.green{background:var(--green);box-shadow:0 0 8px rgba(34,197,94,.6)}
+    .trust-pill-dot.blue{background:var(--blue);box-shadow:0 0 8px rgba(14,165,233,.5)}
+    .trust-pill-dot.orange{background:var(--orange);box-shadow:0 0 8px rgba(249,115,22,.5)}
 
-    /* Speed lines overlay */
-    .hero-lines {
-      position: absolute; inset: 0;
-      overflow: hidden; pointer-events: none; z-index: 0;
+    /* ── USP STRIP ────────────────────── */
+    .usp-strip{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0}
+    .usp-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .usp-item{
+      padding:20px 24px;display:flex;align-items:center;gap:14px;
+      border-right:1px solid var(--border);transition:background .2s;
     }
-    .hero-lines::after {
-      content: '';
-      position: absolute;
-      width: 250%; height: 100%;
-      left: -75%;
-      background: repeating-linear-gradient(
-        108deg,
-        transparent 0, transparent 78px,
-        rgba(14,165,233,0.025) 78px, rgba(14,165,233,0.025) 80px
-      );
-      animation: drift-lines 5s linear infinite;
-    }
+    .usp-item:last-child{border-right:none}
+    .usp-item:hover{background:rgba(14,165,233,.04)}
+    .usp-icon{width:40px;height:40px;border-radius:10px;background:var(--blue-dim);border:1px solid var(--border-blue);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .usp-icon svg{width:20px;height:20px;stroke:var(--blue);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+    .usp-text strong{display:block;font-size:13.5px;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:2px}
+    .usp-text span{font-size:12px;color:var(--text-muted)}
 
-    /* Spinning rear wheel */
-    .hero-wheel-wrap {
-      position: absolute;
-      right: -8vw; top: 50%; transform: translateY(-50%);
-      width: 60vw; max-width: 720px;
-      pointer-events: none; z-index: 1;
+    /* ── BRANDS ───────────────────────── */
+    .brands{background:var(--bg);padding:56px 0}
+    .brands-label{text-align:center;font-size:11px;font-weight:700;color:var(--text-dim);letter-spacing:.12em;text-transform:uppercase;margin-bottom:28px}
+    .brands-row{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
+    .brand-chip{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:10px 22px;border:1px solid var(--border);border-radius:12px;
+      background:rgba(255,255,255,.025);transition:all .25s;cursor:default;
     }
-    .hero-wheel-outer {
-      animation: spin-slow 28s linear infinite;
-      transform-origin: center;
-    }
-    .hero-wheel-inner {
-      animation: spin-reverse 18s linear infinite;
-      transform-origin: center;
-    }
+    .brand-chip:hover{border-color:var(--border-blue);background:var(--blue-dim)}
+    .brand-chip svg{width:22px;height:22px;stroke:var(--blue);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+    .brand-chip span{font-size:15px;font-weight:800;color:var(--text);letter-spacing:-.01em}
+    .brand-chip small{font-size:10px;color:var(--text-muted);font-weight:500}
 
-    /* Scan-line shimmer */
-    .hero-scan {
-      position: absolute; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, transparent, rgba(14,165,233,0.4), transparent);
-      pointer-events: none; z-index: 2;
-      animation: scan-line 8s linear infinite;
+    /* ── SERVICES ─────────────────────── */
+    .services{background:var(--bg2);padding:90px 0}
+    .section-eyebrow{font-size:11px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}
+    .section-title{font-family:'Oswald',sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:var(--text);line-height:1.1;margin-bottom:14px}
+    .section-sub{font-size:1rem;color:var(--text-muted);line-height:1.8;max-width:520px}
+    .section-hd{margin-bottom:52px}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .svc-card{
+      background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px;
+      position:relative;overflow:hidden;transition:border-color .3s,transform .25s,box-shadow .3s;
+      backdrop-filter:blur(12px);cursor:default;
     }
+    .svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(14,165,233,.5),transparent);opacity:0;transition:opacity .3s}
+    .svc-card:hover{border-color:rgba(14,165,233,.3);transform:translateY(-5px);box-shadow:0 24px 60px rgba(0,0,0,.4),0 0 0 1px rgba(14,165,233,.1)}
+    .svc-card:hover::before{opacity:1}
+    .svc-icon-wrap{width:48px;height:48px;border-radius:13px;background:var(--blue-dim);border:1px solid var(--border-blue);display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:all .3s}
+    .svc-card:hover .svc-icon-wrap{background:rgba(14,165,233,.2);box-shadow:0 0 20px rgba(14,165,233,.2)}
+    .svc-icon-wrap svg{width:22px;height:22px;stroke:var(--blue);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+    .svc-tag{display:inline-block;font-size:10px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;opacity:.7}
+    .svc-title{font-weight:800;font-size:16px;color:var(--text);margin-bottom:9px;letter-spacing:-.01em}
+    .svc-desc{font-size:13.5px;color:var(--text-muted);line-height:1.7}
+    .svc-cta-bar{margin-top:52px;text-align:center;padding:32px;background:var(--card);border:1px solid var(--border);border-radius:20px}
+    .svc-cta-bar p{font-size:15px;color:var(--text-muted);margin-bottom:16px}
+    .svc-cta-bar strong{color:var(--text)}
+    .btn-orange-outline{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 26px;border:1.5px solid var(--orange);color:var(--orange);font-size:14px;font-weight:700;text-decoration:none;border-radius:12px;transition:all .2s}
+    .btn-orange-outline:hover{background:var(--orange);color:white;transform:scale(1.02)}
 
-    .hero-content {
-      position: relative; z-index: 10;
-      padding: 120px 0 80px; max-width: 660px;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(14,165,233,0.12); color: var(--blue-bright);
-      border: 1px solid rgba(14,165,233,0.25);
-      font-size: 11px; font-weight: 700; padding: 6px 14px;
-      border-radius: 999px; text-transform: uppercase;
-      letter-spacing: 0.07em; margin-bottom: 28px;
-      backdrop-filter: blur(8px);
-    }
-    .hero-badge svg { width: 14px; height: 14px; fill: var(--orange); }
-    .hero-title {
-      font-family: 'Oswald', sans-serif;
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      font-weight: 700; line-height: 0.92; letter-spacing: -0.01em;
-      color: var(--text); margin-bottom: 28px;
-    }
-    .hero-title .accent {
-      display: block;
-      color: var(--blue);
-      text-shadow: 0 0 40px rgba(14,165,233,0.5), 0 0 80px rgba(14,165,233,0.2);
-    }
-    .hero-sub {
-      font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px;
-      line-height: 1.75; max-width: 500px;
-    }
-    .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 44px; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 10px;
-      height: 56px; padding: 0 30px;
-      background: var(--orange); color: white;
-      font-size: 16px; font-weight: 700; text-decoration: none;
-      border-radius: 14px; transition: all 0.2s;
-      animation: glow-pulse 3s ease-in-out infinite;
-    }
-    .btn-primary:hover { background: #ea6c0a; transform: scale(1.03); }
-    .btn-primary svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .btn-secondary {
-      display: inline-flex; align-items: center; gap: 10px;
-      height: 56px; padding: 0 30px;
-      border: 1.5px solid var(--border-blue); color: var(--blue-bright);
-      background: rgba(14,165,233,0.06);
-      font-size: 16px; font-weight: 700; text-decoration: none;
-      border-radius: 14px; transition: all 0.2s;
-      backdrop-filter: blur(8px);
-    }
-    .btn-secondary:hover {
-      background: rgba(14,165,233,0.15);
-      border-color: var(--blue);
-      transform: scale(1.03);
-    }
-    .btn-secondary svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .trust-bar { display: flex; flex-wrap: wrap; gap: 22px; }
-    .trust-item {
-      display: flex; align-items: center; gap: 8px;
-      font-size: 13px; color: var(--text-muted); font-weight: 500;
-    }
-    .trust-icon {
-      width: 28px; height: 28px; border-radius: 7px;
-      background: rgba(14,165,233,0.1); border: 1px solid var(--border-blue);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .trust-icon svg { width: 14px; height: 14px; fill: none; stroke: var(--blue); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    /* ── WHY KAGU ─────────────────────── */
+    .why{background:var(--bg);padding:90px 0}
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+    .why-feature{display:flex;gap:18px;align-items:flex-start;margin-bottom:32px}
+    .why-feature:last-child{margin-bottom:0}
+    .why-feature-icon{width:44px;height:44px;border-radius:12px;background:var(--blue-dim);border:1px solid var(--border-blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .why-feature-icon svg{width:20px;height:20px;stroke:var(--blue);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+    .why-feature-title{font-weight:700;font-size:15px;color:var(--text);margin-bottom:5px}
+    .why-feature-desc{font-size:13.5px;color:var(--text-muted);line-height:1.7}
+    .why-visual{position:relative}
+    .why-card{background:linear-gradient(145deg,var(--bg3),#101e38);border:1px solid var(--border);border-radius:28px;overflow:hidden;aspect-ratio:4/5;max-width:400px;margin:0 auto;position:relative}
+    .why-card-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(14,165,233,.1) 1.5px,transparent 1.5px);background-size:24px 24px}
+    .why-card-illo{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:40px}
+    .why-gear{position:absolute;top:-30px;right:-30px;width:120px;height:120px;opacity:.06;animation:spin-slow 18s linear infinite}
+    .why-caption{position:absolute;bottom:0;left:0;right:0;padding:18px}
+    .why-caption-inner{background:rgba(6,13,24,.88);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:15px;padding:14px;text-align:center}
+    .why-caption-inner small{font-size:11px;color:var(--text-dim)}
+    .why-caption-inner strong{display:block;font-size:14px;color:var(--text);margin:3px 0}
+    .why-caption-inner span{font-size:12px;color:var(--text-muted)}
+    .why-badge{position:absolute;bottom:20px;right:-12px;background:linear-gradient(135deg,var(--orange),#c25509);color:white;border-radius:14px;padding:12px 16px;box-shadow:0 0 28px rgba(249,115,22,.4),0 8px 20px rgba(0,0,0,.4);display:flex;align-items:center;gap:10px;animation:badge-pop 4s ease-in-out infinite}
+    .why-badge svg{width:18px;height:18px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .why-badge-text strong{display:block;font-size:12px;font-weight:800}
+    .why-badge-text small{font-size:10px;opacity:.85}
 
-    /* ─── SERVICES ─── */
-    .services { background: var(--bg2); padding: 96px 0; }
-    .section-overline {
-      font-size: 11px; font-weight: 700; color: var(--blue);
-      text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px;
-    }
-    .section-title {
-      font-family: 'Oswald', sans-serif;
-      font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
-      color: var(--text); line-height: 1.15; margin-bottom: 16px;
-    }
-    .section-sub { font-size: 1rem; color: var(--text-muted); line-height: 1.75; max-width: 560px; }
-    .section-header { margin-bottom: 56px; }
-    .services-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-    }
-    .service-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px; padding: 28px; cursor: default;
-      transition: border-color 0.3s, box-shadow 0.3s, transform 0.25s;
-      backdrop-filter: blur(12px);
-      position: relative; overflow: hidden;
-    }
-    .service-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(14,165,233,0.4), transparent);
-      opacity: 0; transition: opacity 0.3s;
-    }
-    .service-card:hover {
-      border-color: var(--border-blue);
-      box-shadow: 0 0 30px rgba(14,165,233,0.08), 0 20px 50px rgba(0,0,0,0.4);
-      transform: translateY(-6px);
-    }
-    .service-card:hover::before { opacity: 1; }
-    .service-icon {
-      width: 48px; height: 48px;
-      background: rgba(14,165,233,0.1); border: 1px solid var(--border-blue);
-      border-radius: 12px; display: flex; align-items: center; justify-content: center;
-      margin-bottom: 20px; transition: all 0.3s;
-    }
-    .service-card:hover .service-icon {
-      background: rgba(14,165,233,0.18);
-      box-shadow: 0 0 16px rgba(14,165,233,0.25);
-    }
-    .service-icon svg { width: 24px; height: 24px; fill: none; stroke: var(--blue); stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
-    .service-title { font-weight: 700; font-size: 17px; color: var(--text); margin-bottom: 10px; }
-    .service-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
-    .services-cta { margin-top: 52px; text-align: center; }
-    .services-cta p { color: var(--text-muted); margin-bottom: 18px; }
-    .btn-blue {
-      display: inline-flex; align-items: center; gap: 8px;
-      height: 48px; padding: 0 26px;
-      background: rgba(14,165,233,0.15); color: var(--blue-bright);
-      border: 1px solid var(--border-blue);
-      font-size: 15px; font-weight: 600; text-decoration: none;
-      border-radius: 12px; transition: all 0.2s;
-    }
-    .btn-blue:hover { background: rgba(14,165,233,0.25); transform: scale(1.02); }
+    /* ── STATS ROW ────────────────────── */
+    .stats-section{background:var(--bg2);padding:0}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .stat-item{padding:36px 20px;text-align:center;border-right:1px solid var(--border)}
+    .stat-item:last-child{border-right:none}
+    .stat-value{font-family:'Oswald',sans-serif;font-size:3rem;font-weight:700;color:var(--blue);line-height:1;margin-bottom:6px;text-shadow:0 0 24px rgba(14,165,233,.4)}
+    .stat-label{font-size:12px;color:var(--text-muted);font-weight:500;text-transform:uppercase;letter-spacing:.06em}
 
-    /* ─── ABOUT ─── */
-    .about { background: var(--bg); padding: 96px 0; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .about-body { color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-size: 15px; }
-    .stats-row {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 16px; padding: 28px 0;
-      border-top: 1px solid var(--border);
-      margin: 28px 0 0;
-    }
-    .stat { text-align: center; }
-    .stat-value {
-      font-family: 'Oswald', sans-serif; font-size: 2.6rem; font-weight: 700;
-      color: var(--blue); line-height: 1; margin-bottom: 6px;
-      text-shadow: 0 0 20px rgba(14,165,233,0.4);
-    }
-    .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 500; }
-    .about-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-    .btn-outline {
-      display: inline-flex; align-items: center; gap: 8px;
-      height: 48px; padding: 0 22px;
-      border: 1px solid var(--border); color: var(--text-muted);
-      font-size: 14px; font-weight: 600; text-decoration: none;
-      border-radius: 12px; transition: all 0.2s;
-    }
-    .btn-outline:hover { border-color: var(--border-blue); color: var(--blue-bright); }
-    .btn-outline svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .about-visual { position: relative; }
-    .about-card {
-      background: linear-gradient(145deg, var(--bg3), var(--bg4));
-      border: 1px solid var(--border);
-      border-radius: 28px; overflow: hidden;
-      aspect-ratio: 4/5; max-width: 380px; margin: 0 auto; position: relative;
-    }
-    .about-card-dots {
-      position: absolute; inset: 0;
-      background-image: radial-gradient(circle, rgba(14,165,233,0.12) 1.5px, transparent 1.5px);
-      background-size: 26px 26px;
-    }
-    .about-illustration {
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center; padding: 40px;
-    }
-    .about-caption {
-      position: absolute; bottom: 0; left: 0; right: 0; padding: 20px;
-    }
-    .about-caption-inner {
-      background: rgba(6,13,24,0.85); backdrop-filter: blur(10px);
-      border: 1px solid var(--border);
-      border-radius: 16px; padding: 16px; text-align: center;
-    }
-    .about-caption-inner small { font-size: 11px; color: var(--text-dim); }
-    .about-caption-inner strong { display: block; font-size: 15px; color: var(--text); margin: 2px 0; }
-    .about-caption-inner span { font-size: 12px; color: var(--text-muted); }
-    .about-badge {
-      position: absolute; bottom: -16px; right: -16px;
-      background: linear-gradient(135deg, var(--orange), #c2550a);
-      color: white; border-radius: 16px; padding: 12px 18px;
-      box-shadow: 0 0 30px var(--orange-glow), 0 8px 24px rgba(0,0,0,0.4);
-      display: flex; align-items: center; gap: 10px;
-      animation: badge-float 4s ease-in-out infinite;
-    }
-    .about-badge svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .about-badge-text strong { display: block; font-size: 13px; font-weight: 700; }
-    .about-badge-text small { font-size: 11px; opacity: 0.85; }
+    /* ── REVIEWS ──────────────────────── */
+    .reviews{background:var(--bg);padding:90px 0}
+    .reviews-header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:48px}
+    .reviews-stars{display:flex;gap:4px;margin-bottom:8px}
+    .reviews-stars svg{width:22px;height:22px;fill:#fb923c}
+    .reviews-count{font-size:14px;color:var(--text-muted)}
+    .reviews-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--blue);text-decoration:none;font-weight:500;transition:color .2s}
+    .reviews-link:hover{color:var(--blue-bright)}
+    .reviews-link svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .review-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:16px;transition:border-color .3s,box-shadow .3s;backdrop-filter:blur(12px)}
+    .review-card:hover{border-color:rgba(249,115,22,.2);box-shadow:0 20px 50px rgba(0,0,0,.3),0 0 0 1px rgba(249,115,22,.08)}
+    .review-card-stars{display:flex;gap:3px}
+    .review-card-stars svg{width:15px;height:15px;fill:#fb923c}
+    .review-quote{font-size:14px;color:rgba(240,246,255,.7);line-height:1.75;font-style:italic;flex:1}
+    .review-footer{display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid var(--border)}
+    .review-author{font-weight:700;font-size:13.5px;color:var(--text)}
+    .review-date{font-size:11px;color:var(--text-dim)}
+    .review-google{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-dim);margin-top:12px}
+    .review-google-dot{width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#4285f4,#34a853);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:white}
 
-    /* Spinning gear decoration in about */
-    .about-gear {
-      position: absolute; top: -40px; right: -40px;
-      width: 150px; height: 150px; opacity: 0.04;
-      animation: spin-slow 20s linear infinite;
-    }
+    /* ── FINAL CTA ────────────────────── */
+    .final-cta{background:linear-gradient(135deg,var(--bg3) 0%,#0a1828 50%,var(--bg3) 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:90px 0;position:relative;overflow:hidden}
+    .final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(14,165,233,.06) 0,transparent 70%)}
+    .final-cta-inner{text-align:center;position:relative;z-index:1}
+    .final-cta-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);color:#4ade80;font-size:11px;font-weight:700;padding:5px 14px;border-radius:99px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:22px}
+    .final-cta-badge-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px rgba(74,222,128,.7);animation:pulse-ring 2s ease-in-out infinite}
+    .final-cta h2{font-family:'Oswald',sans-serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:700;color:var(--text);margin-bottom:16px;line-height:1.1}
+    .final-cta h2 span{color:var(--blue);text-shadow:0 0 40px rgba(14,165,233,.4)}
+    .final-cta p{font-size:1.05rem;color:var(--text-muted);margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.8}
+    .final-cta-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
+    .btn-cta-big{display:inline-flex;align-items:center;gap:12px;height:62px;padding:0 36px;background:var(--orange);color:white;font-size:18px;font-weight:800;text-decoration:none;border-radius:16px;transition:all .2s;animation:glow-btn 2.5s ease-in-out infinite;letter-spacing:-.01em}
+    .btn-cta-big:hover{background:var(--orange-dark);transform:scale(1.03)}
+    .btn-cta-big svg{width:22px;height:22px;stroke:white;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .btn-cta-ghost{display:inline-flex;align-items:center;gap:10px;height:62px;padding:0 28px;border:1.5px solid var(--border-blue);color:var(--blue-bright);background:rgba(14,165,233,.07);font-size:16px;font-weight:700;text-decoration:none;border-radius:16px;transition:all .2s}
+    .btn-cta-ghost:hover{background:rgba(14,165,233,.15);border-color:var(--blue)}
+    .btn-cta-ghost svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .final-note{margin-top:28px;font-size:12px;color:var(--text-dim);display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+    .final-note span{display:flex;align-items:center;gap:5px}
+    .final-note svg{width:13px;height:13px;stroke:var(--green);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 
-    /* ─── REVIEWS ─── */
-    .reviews { background: var(--bg2); padding: 96px 0; }
-    .reviews-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; margin-bottom: 52px; }
-    .stars { display: flex; gap: 4px; }
-    .star { width: 20px; height: 20px; fill: #fb923c; }
-    .reviews-meta-text { font-size: 14px; color: var(--text-muted); }
-    .reviews-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 14px; color: var(--blue); text-decoration: none; transition: color 0.2s;
-    }
-    .reviews-link:hover { color: var(--blue-bright); }
-    .reviews-link svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .review-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px; padding: 28px;
-      display: flex; flex-direction: column; gap: 18px;
-      transition: border-color 0.3s, box-shadow 0.3s;
-      backdrop-filter: blur(12px);
-    }
-    .review-card:hover {
-      border-color: rgba(249,115,22,0.25);
-      box-shadow: 0 0 30px rgba(249,115,22,0.06), 0 20px 50px rgba(0,0,0,0.3);
-    }
-    .review-stars { display: flex; gap: 3px; }
-    .review-star { width: 16px; height: 16px; fill: #fb923c; }
-    .review-text { font-size: 14px; color: rgba(226,234,244,0.75); line-height: 1.75; font-style: italic; flex: 1; }
-    .review-footer {
-      display: flex; justify-content: space-between; align-items: center;
-      padding-top: 14px; border-top: 1px solid var(--border);
-    }
-    .review-author { font-weight: 600; color: var(--text); font-size: 14px; }
-    .review-date { font-size: 12px; color: var(--text-dim); }
+    /* ── FOOTER ───────────────────────── */
+    .footer{background:#030810;border-top:1px solid var(--border)}
+    .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:48px;padding:60px 0}
+    .footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+    .footer-logo .logo-icon{width:34px;height:34px;border-radius:9px}
+    .footer-logo strong{font-size:15px;font-weight:800;color:var(--text)}
+    .footer-tagline{font-size:13.5px;color:var(--text-muted);line-height:1.8;max-width:260px;margin-bottom:18px}
+    .footer-rating{display:flex;align-items:center;gap:6px}
+    .footer-rating svg{width:15px;height:15px;fill:#fb923c}
+    .footer-rating-txt{font-size:12px;color:var(--text-muted);margin-left:4px}
+    .footer-heading{font-size:10.5px;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px}
+    .footer-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+    .footer-row svg{width:15px;height:15px;stroke:var(--text-dim);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;margin-top:2px}
+    .footer-phone{color:var(--blue);font-weight:700;font-size:15px;text-decoration:none;transition:color .2s}
+    .footer-phone:hover{color:var(--blue-bright)}
+    .footer-addr{font-size:13.5px;color:var(--text-muted)}
+    .footer-ext{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;color:var(--blue);text-decoration:none;margin-top:6px;transition:color .2s}
+    .footer-ext:hover{color:var(--blue-bright)}
+    .footer-ext svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .footer-hours-row{display:flex;justify-content:space-between;gap:12px;margin-bottom:10px;font-size:13.5px}
+    .footer-hours-days{color:var(--text-muted)}
+    .footer-hours-time{color:var(--text);font-weight:500}
+    .footer-hours-time.closed{color:rgba(248,113,113,.55)}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding:18px 0;border-top:1px solid var(--border);font-size:12px;color:var(--text-dim)}
+    .footer-bottom a{color:var(--text-dim);text-decoration:none;transition:color .2s}
+    .footer-bottom a:hover{color:var(--text-muted)}
 
-    /* ─── FOOTER ─── */
-    .footer { background: #030810; border-top: 1px solid var(--border); }
-    .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; padding: 64px 0; }
-    .footer-tagline { font-size: 14px; color: var(--text-muted); line-height: 1.75; max-width: 260px; margin: 14px 0 18px; }
-    .footer-stars { display: flex; align-items: center; gap: 4px; }
-    .footer-star { width: 16px; height: 16px; fill: #fb923c; }
-    .footer-rating-text { font-size: 13px; color: var(--text-muted); margin-left: 6px; }
-    .footer-heading { font-size: 11px; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 22px; }
-    .footer-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
-    .footer-contact-item svg { width: 16px; height: 16px; fill: none; stroke: var(--text-dim); stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; margin-top: 2px; }
-    .footer-phone { color: var(--blue); font-weight: 600; text-decoration: none; font-size: 15px; transition: color 0.2s; }
-    .footer-phone:hover { color: var(--blue-bright); }
-    .footer-addr { font-size: 14px; color: var(--text-muted); }
-    .footer-maps { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--blue); text-decoration: none; margin-top: 6px; transition: color 0.2s; }
-    .footer-maps:hover { color: var(--blue-bright); }
-    .footer-maps svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .footer-hours-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
-    .footer-hours-item svg { width: 16px; height: 16px; fill: none; stroke: var(--text-dim); stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; margin-top: 2px; }
-    .footer-hours-days { font-size: 14px; color: var(--text-muted); flex: 1; }
-    .footer-hours-time { font-size: 14px; font-weight: 500; color: var(--text); }
-    .footer-hours-time.closed { color: rgba(248,113,113,0.6); }
-    .footer-bottom {
-      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
-      padding: 20px 0; border-top: 1px solid var(--border);
-      font-size: 12px; color: var(--text-dim);
+    /* ── RESPONSIVE ───────────────────── */
+    @media(max-width:1024px){
+      .usp-grid{grid-template-columns:repeat(2,1fr)}
+      .usp-item{border-right:none;border-bottom:1px solid var(--border)}
+      .usp-item:nth-child(odd){border-right:1px solid var(--border)}
+      .usp-item:nth-last-child(-n+2){border-bottom:none}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .stat-item:nth-child(2){border-right:none}
+      .stat-item:nth-child(3){border-right:1px solid var(--border)}
+      .stat-item:nth-child(3),.stat-item:nth-child(4){border-top:1px solid var(--border)}
+      .why-grid{grid-template-columns:1fr;gap:40px}
+      .why-badge{right:20px;bottom:20px}
     }
-    .footer-bottom a { color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
-    .footer-bottom a:hover { color: var(--text-muted); }
-
-    /* ─── SCROLL ANIMATIONS ─── */
-    .animate {
-      opacity: 0; transform: translateY(36px);
-      transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    @media(max-width:768px){
+      .nav-links,.nav-phone{display:none}
+      .hamburger{display:flex}
+      .services-grid{grid-template-columns:1fr}
+      .reviews-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr;gap:32px}
+      .hero-wheel{width:90vw;opacity:.25}
+      .sticky-cta{display:block}
+      body{padding-bottom:86px}
+      .reviews-header{flex-direction:column;align-items:flex-start}
+      .brands-row{gap:20px}
+      .brand-chip{padding:8px 16px}
     }
-    .animate.visible { opacity: 1; transform: translateY(0); }
-    .animate-delay-1 { transition-delay: 0.1s; }
-    .animate-delay-2 { transition-delay: 0.2s; }
-    .animate-delay-3 { transition-delay: 0.3s; }
-    .animate-delay-4 { transition-delay: 0.4s; }
-    .animate-delay-5 { transition-delay: 0.5s; }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 1024px) {
-      .about-grid { grid-template-columns: 1fr; gap: 48px; }
-      .about-badge { bottom: 16px; right: 16px; }
-      .about-gear { display: none; }
+    @media(min-width:640px){
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .reviews-grid{grid-template-columns:repeat(2,1fr)}
     }
-    @media (max-width: 768px) {
-      .nav-links, .btn-call { display: none; }
-      .hamburger { display: flex; }
-      .services-grid, .reviews-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-      .hero-wheel-wrap { width: 90vw; opacity: 0.3; }
-      .hero-lines::after { opacity: 0.5; }
+    @media(min-width:1024px){
+      .services-grid{grid-template-columns:repeat(3,1fr)}
+      .reviews-grid{grid-template-columns:repeat(3,1fr)}
     }
-    @media (max-width: 640px) {
-      .hero-ctas { flex-direction: column; }
-      .btn-primary, .btn-secondary { justify-content: center; }
-      .stats-row { grid-template-columns: repeat(3,1fr); gap: 8px; }
-      .stat-value { font-size: 2rem; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-    }
-    @media (min-width: 768px) {
-      .services-grid { grid-template-columns: repeat(2,1fr); }
-      .reviews-grid { grid-template-columns: repeat(2,1fr); }
-    }
-    @media (min-width: 1024px) {
-      .services-grid { grid-template-columns: repeat(3,1fr); }
-      .reviews-grid { grid-template-columns: repeat(3,1fr); }
+    @media(max-width:480px){
+      .hero-ctas{flex-direction:column}
+      .btn-call-hero,.btn-route{justify-content:center}
+      .final-cta-btns{flex-direction:column;align-items:center}
+      .footer-bottom{flex-direction:column;text-align:center}
+      .usp-grid{grid-template-columns:1fr}
+      .usp-item{border-right:none;border-bottom:1px solid var(--border)}
+      .usp-item:last-child{border-bottom:none}
     }
   </style>
 </head>
 <body>
 
-  <!-- ─── NAVBAR ─── -->
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <div class="navbar-inner">
-        <a href="#" class="logo">
-          <div class="logo-icon">
-            <svg viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5 10 7l4 5 2-3 2 8M10 7h4"/></svg>
-          </div>
-          <div class="logo-text"><strong>KAGU E-BIKES</strong><span>Moormerland</span></div>
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <a href="tel:015205161641">
+    <svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:white;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.6 19.79 19.79 0 01.82 2.06 2 2 0 012.82 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.25v1.67z"/></svg>
+    Jetzt anrufen – 01520 5161641
+  </a>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5 10 7l4 5 2-3 2 8M10 7h4"/></svg>
+        </div>
+        <div class="logo-text"><strong>KAGU E-BIKES</strong><span>Moormerland</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#warum">Warum KAGU</a></li>
+        <li><a href="#bewertungen">Bewertungen</a></li>
+      </ul>
+      <a href="tel:015205161641" class="nav-phone">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.6 19.79 19.79 0 01.82 2.06 2 2 0 012.82 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.25v1.67z"/></svg>
+        01520 5161641
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="container" style="display:flex;flex-direction:column;gap:4px">
+      <a href="#leistungen" class="mobile-link">Leistungen</a>
+      <a href="#warum" class="mobile-link">Warum KAGU</a>
+      <a href="#bewertungen" class="mobile-link">Bewertungen</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="hero">
+  <div class="hero-lines"></div>
+  <div class="hero-scan"></div>
+  <!-- Animated wheel -->
+  <div class="hero-wheel" aria-hidden="true">
+    <svg viewBox="0 0 600 600" fill="none">
+      <g class="spin-fwd" style="transform-origin:300px 300px">
+        <circle cx="300" cy="300" r="272" stroke="rgba(14,165,233,.45)" stroke-width="10"/>
+        <circle cx="300" cy="300" r="256" stroke="rgba(14,165,233,.1)" stroke-width="2"/>
+        <line x1="300" y1="28" x2="300" y2="572" stroke="rgba(14,165,233,.3)" stroke-width="3.5"/>
+        <line x1="28" y1="300" x2="572" y2="300" stroke="rgba(14,165,233,.3)" stroke-width="3.5"/>
+        <line x1="108" y1="108" x2="492" y2="492" stroke="rgba(14,165,233,.2)" stroke-width="2.5"/>
+        <line x1="492" y1="108" x2="108" y2="492" stroke="rgba(14,165,233,.2)" stroke-width="2.5"/>
+        <line x1="60" y1="192" x2="540" y2="408" stroke="rgba(14,165,233,.12)" stroke-width="1.5"/>
+        <line x1="540" y1="192" x2="60" y2="408" stroke="rgba(14,165,233,.12)" stroke-width="1.5"/>
+        <line x1="192" y1="60" x2="408" y2="540" stroke="rgba(14,165,233,.12)" stroke-width="1.5"/>
+        <line x1="408" y1="60" x2="192" y2="540" stroke="rgba(14,165,233,.12)" stroke-width="1.5"/>
+      </g>
+      <g class="spin-bk" style="transform-origin:300px 300px">
+        <circle cx="300" cy="300" r="62" stroke="rgba(14,165,233,.7)" stroke-width="7"/>
+        <circle cx="300" cy="300" r="40" stroke="rgba(249,115,22,.6)" stroke-width="5"/>
+        <circle cx="300" cy="238" r="9" fill="rgba(14,165,233,.5)"/>
+        <circle cx="300" cy="362" r="9" fill="rgba(14,165,233,.5)"/>
+        <circle cx="238" cy="300" r="9" fill="rgba(14,165,233,.5)"/>
+        <circle cx="362" cy="300" r="9" fill="rgba(14,165,233,.5)"/>
+        <circle cx="254" cy="254" r="7" fill="rgba(14,165,233,.35)"/>
+        <circle cx="346" cy="254" r="7" fill="rgba(14,165,233,.35)"/>
+        <circle cx="254" cy="346" r="7" fill="rgba(14,165,233,.35)"/>
+        <circle cx="346" cy="346" r="7" fill="rgba(14,165,233,.35)"/>
+      </g>
+      <circle cx="300" cy="300" r="18" fill="rgba(249,115,22,.8)"/>
+      <circle cx="300" cy="300" r="9" fill="#f97316"/>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-rating animate">
+        <div class="hero-rating-stars">
+          <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        4,9 von 5 · 43 Google-Bewertungen
+      </div>
+      <h1 class="hero-title animate d1">
+        Ihr E-Bike-<span class="line2">Spezialist.</span>
+      </h1>
+      <p class="hero-sub animate d2">
+        <strong>Gazelle &amp; Pegasus E-Bikes</strong> kaufen, testen und liefern lassen – direkt in Moormerland.<br>Persönliche Beratung ohne Verkaufsdruck.
+      </p>
+      <div class="hero-ctas animate d3">
+        <a href="tel:015205161641" class="btn-call-hero">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.6 19.79 19.79 0 01.82 2.06 2 2 0 012.82 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.25v1.67z"/></svg>
+          Jetzt anrufen
         </a>
-        <ul class="nav-links">
-          <li><a href="#leistungen">Leistungen</a></li>
-          <li><a href="#ueber-uns">Über uns</a></li>
-          <li><a href="#bewertungen">Bewertungen</a></li>
-        </ul>
-        <a href="tel:015205161641" class="btn-call">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.6 19.79 19.79 0 01.82 2.06 2 2 0 012.82 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.25v1.67z"/></svg>
+        <a href="https://www.google.com/maps/search/Hauptstra%C3%9Fe+169+26802+Moormerland" target="_blank" rel="noopener noreferrer" class="btn-route">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Route planen
+        </a>
+      </div>
+      <div class="hero-trust animate d4">
+        <div class="trust-pill"><span class="trust-pill-dot green"></span>Probefahrt sofort möglich</div>
+        <div class="trust-pill"><span class="trust-pill-dot blue"></span>Gazelle &amp; Pegasus Partner</div>
+        <div class="trust-pill"><span class="trust-pill-dot orange"></span>Lieferung nach Hause</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ USP STRIP ═══════════════════ -->
+<div class="usp-strip">
+  <div class="container">
+    <div class="usp-grid">
+      <div class="usp-item animate">
+        <div class="usp-icon"><svg viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5 10 7l4 5 2-3 2 8M10 7h4"/></svg></div>
+        <div class="usp-text"><strong>Probefahrt inklusive</strong><span>Testen, bevor Sie kaufen</span></div>
+      </div>
+      <div class="usp-item animate d1">
+        <div class="usp-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <div class="usp-text"><strong>Lieferservice</strong><span>Direkt zu Ihnen nach Hause</span></div>
+      </div>
+      <div class="usp-item animate d2">
+        <div class="usp-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+        <div class="usp-text"><strong>Autorisierter Partner</strong><span>Gazelle &amp; Pegasus direkt</span></div>
+      </div>
+      <div class="usp-item animate d3">
+        <div class="usp-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div class="usp-text"><strong>Ehrliche Beratung</strong><span>Ohne Verkaufsdruck</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════ BRANDS ═══════════════════ -->
+<section class="brands">
+  <div class="container">
+    <p class="brands-label animate">Unsere Markenpartner</p>
+    <div class="brands-row animate d1">
+      <div class="brand-chip">
+        <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <div><span>Gazelle</span><br><small>Autorisierter Partner</small></div>
+      </div>
+      <div class="brand-chip">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+        <div><span>Pegasus</span><br><small>Fachhandel</small></div>
+      </div>
+      <div class="brand-chip">
+        <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <div><span>E-Bikes</span><br><small>Große Auswahl</small></div>
+      </div>
+      <div class="brand-chip">
+        <svg viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5 10 7l4 5 2-3 2 8M10 7h4"/></svg>
+        <div><span>Gebraucht</span><br><small>Geprüfte Qualität</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════ SERVICES ═══════════════════ -->
+<section class="services" id="leistungen">
+  <div class="container">
+    <div class="section-hd">
+      <p class="section-eyebrow animate">Was wir für Sie tun</p>
+      <h2 class="section-title animate d1">Unsere Leistungen</h2>
+      <p class="section-sub animate d2">Von der ersten Probefahrt bis zur Lieferung direkt vor Ihre Haustür – wir begleiten Sie auf dem Weg zu Ihrem perfekten E-Bike.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card animate d1">
+        <div class="svc-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></div>
+        <div class="svc-tag">Bestseller</div>
+        <div class="svc-title">E-Bikes kaufen</div>
+        <p class="svc-desc">Große Auswahl an City-, Trekking- und Mountain-E-Bikes. Namhafte Hersteller, geprüfte Qualität – direkt ab Lager.</p>
+      </div>
+      <div class="svc-card animate d2">
+        <div class="svc-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+        <div class="svc-tag">Partner</div>
+        <div class="svc-title">Gazelle E-Bikes</div>
+        <p class="svc-desc">Autorisierter Gazelle-Händler. Das volle Sortiment der niederländischen Traditionsmarke – mit Garantie und Service.</p>
+      </div>
+      <div class="svc-card animate d3">
+        <div class="svc-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5 10 7l4 5 2-3 2 8M10 7h4"/></svg></div>
+        <div class="svc-tag">Kostenlos</div>
+        <div class="svc-title">Probefahrten</div>
+        <p class="svc-desc">Testen Sie Ihr Wunsch-E-Bike ausgiebig, bevor Sie sich entscheiden. Einfach vorbeikommen – keine Anmeldung nötig.</p>
+      </div>
+      <div class="svc-card animate d1">
+        <div class="svc-icon-wrap"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <div class="svc-tag">Komfort</div>
+        <div class="svc-title">Lieferservice</div>
+        <p class="svc-desc">Kein Transport-Stress: Wir liefern Ihr neues E-Bike sicher und bequem direkt zu Ihnen nach Hause.</p>
+      </div>
+      <div class="svc-card animate d2">
+        <div class="svc-icon-wrap"><svg viewBox="0 0 24 24"><path d="M16.5 9.4l-9-5.19M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+        <div class="svc-tag">Gebraucht</div>
+        <div class="svc-title">Gebrauchträder</div>
+        <p class="svc-desc">Geprüfte Gebraucht-E-Bikes in Top-Zustand zu fairen Preisen. Pegasus, Gazelle und weitere Marken verfügbar.</p>
+      </div>
+      <div class="svc-card animate d3">
+        <div class="svc-icon-wrap"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div class="svc-tag">Persönlich</div>
+        <div class="svc-title">Beratung</div>
+        <p class="svc-desc">Wir hören zu. Individuelle Beratung ohne Druck – damit Sie das E-Bike bekommen, das wirklich zu Ihnen passt.</p>
+      </div>
+    </div>
+    <div class="svc-cta-bar animate">
+      <p>Noch unsicher, welches E-Bike das richtige ist? <strong>Wir helfen Ihnen gerne!</strong></p>
+      <a href="tel:015205161641" class="btn-orange-outline">
+        <svg style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.6 19.79 19.79 0 01.82 2.06 2 2 0 012.82 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.25v1.67z"/></svg>
+        Einfach anrufen – wir beraten Sie!
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════ STATS ═══════════════════ -->
+<div class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-item animate">
+      <div class="stat-value" data-countup="4.9" data-dec="1">0</div>
+      <div class="stat-label">★ Google-Bewertung</div>
+    </div>
+    <div class="stat-item animate d1">
+      <div class="stat-value" data-countup="43" data-dec="0">0</div>
+      <div class="stat-label">Kundenstimmen</div>
+    </div>
+    <div class="stat-item animate d2">
+      <div class="stat-value" style="font-size:2rem;line-height:1.15;padding-top:4px">E-Bike<br><span style="font-size:1.2rem;opacity:.7">Experte</span></div>
+      <div class="stat-label">In Moormerland</div>
+    </div>
+    <div class="stat-item animate d3">
+      <div class="stat-value" style="font-size:2rem;line-height:1.15;padding-top:4px">100%<br><span style="font-size:1rem;opacity:.7">Zufrieden</span></div>
+      <div class="stat-label">Kundenzufriedenheit</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════ WHY KAGU ═══════════════════ -->
+<section class="why" id="warum">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <p class="section-eyebrow animate">Warum KAGU E-BIKES?</p>
+        <h2 class="section-title animate d1">Kein Versandhandel.<br><span style="color:var(--blue)">Echter Fachhandel.</span></h2>
+        <p class="section-sub animate d2" style="margin-bottom:40px">Was Sie bei KAGU bekommen, kriegen Sie nicht online: persönliche Beratung, Probefahrten und einen Ansprechpartner, dem Sie vertrauen können.</p>
+        <div class="why-feature animate d2">
+          <div class="why-feature-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div>
+            <div class="why-feature-title">Persönliche Beratung vor Ort</div>
+            <p class="why-feature-desc">Kein Chat-Bot, kein Callcenter. Sie sprechen direkt mit dem Inhaber – der weiß, was er verkauft und was zu Ihnen passt.</p>
+          </div>
+        </div>
+        <div class="why-feature animate d3">
+          <div class="why-feature-icon"><svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+          <div>
+            <div class="why-feature-title">Probefahrt – immer kostenlos</div>
+            <p class="why-feature-desc">Kein E-Bike kaufen ohne zu fahren. Bei uns testen Sie ausgiebig – bis Sie wissen, dass es das richtige ist.</p>
+          </div>
+        </div>
+        <div class="why-feature animate d4">
+          <div class="why-feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+          <div>
+            <div class="why-feature-title">Kein Verkaufsdruck</div>
+            <p class="why-feature-desc">Nehmen Sie sich so viel Zeit wie Sie brauchen. Unsere Kunden kommen wieder – weil sie sich nie unter Druck gesetzt fühlen.</p>
+          </div>
+        </div>
+        <div class="why-feature animate d5">
+          <div class="why-feature-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+          <div>
+            <div class="why-feature-title">Lieferung &amp; Abholung vor dem Laden</div>
+            <p class="why-feature-desc">Wir liefern Ihr E-Bike direkt zu Ihnen – oder Sie holen es bequem bei uns ab. Ganz wie Sie möchten.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual animate d2">
+        <svg class="why-gear" viewBox="0 0 200 200" fill="none">
+          <circle cx="100" cy="100" r="80" stroke="#0ea5e9" stroke-width="5"/>
+          <circle cx="100" cy="100" r="55" stroke="#0ea5e9" stroke-width="4"/>
+          <circle cx="100" cy="100" r="18" fill="#0ea5e9"/>
+          <circle cx="100" cy="20" r="11" fill="#0ea5e9"/><circle cx="100" cy="180" r="11" fill="#0ea5e9"/>
+          <circle cx="20" cy="100" r="11" fill="#0ea5e9"/><circle cx="180" cy="100" r="11" fill="#0ea5e9"/>
+          <circle cx="43" cy="43" r="9" fill="#0ea5e9"/><circle cx="157" cy="43" r="9" fill="#0ea5e9"/>
+          <circle cx="43" cy="157" r="9" fill="#0ea5e9"/><circle cx="157" cy="157" r="9" fill="#0ea5e9"/>
+        </svg>
+        <div class="why-card">
+          <div class="why-card-dots"></div>
+          <div class="why-card-illo">
+            <svg viewBox="0 0 340 420" fill="none">
+              <circle cx="170" cy="80" r="50" stroke="#0ea5e9" stroke-width="8"/>
+              <path d="M120 160 Q170 140 220 160 L240 280 H100 Z" stroke="#0ea5e9" stroke-width="7" fill="none" stroke-linejoin="round"/>
+              <path d="M120 170 Q90 200 75 240" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round" fill="none"/>
+              <path d="M220 170 Q250 200 265 240" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round" fill="none"/>
+              <path d="M130 280 L115 370" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round"/>
+              <path d="M210 280 L225 370" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round"/>
+              <path d="M108 370 L130 370" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round"/>
+              <path d="M218 370 L240 370" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round"/>
+              <path d="M265 240 Q275 230 285 235 L310 260 Q315 268 308 275 L295 288 Q287 293 280 286 L255 261 Z" stroke="#f97316" stroke-width="6" fill="none" stroke-linejoin="round"/>
+              <line x1="290" y1="270" x2="330" y2="310" stroke="#f97316" stroke-width="7" stroke-linecap="round"/>
+              <path d="M152 88 Q170 102 188 88" stroke="#0ea5e9" stroke-width="5" stroke-linecap="round" fill="none"/>
+              <circle cx="155" cy="72" r="5" fill="#0ea5e9"/><circle cx="185" cy="72" r="5" fill="#0ea5e9"/>
+            </svg>
+          </div>
+          <div class="why-caption">
+            <div class="why-caption-inner">
+              <small>Foto folgt</small>
+              <strong>Ihr KAGU E-BIKES Team</strong>
+              <span>Hauptstraße 169, Moormerland</span>
+            </div>
+          </div>
+        </div>
+        <div class="why-badge">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+          <div class="why-badge-text"><strong>Ihr E-Bike-Experte</strong><small>in Moormerland</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════ REVIEWS ═══════════════════ -->
+<section class="reviews" id="bewertungen">
+  <div class="container">
+    <div class="reviews-header">
+      <div>
+        <p class="section-eyebrow animate">Was unsere Kunden sagen</p>
+        <h2 class="section-title animate d1">4,9 Sterne auf Google</h2>
+        <div class="reviews-stars animate d2">
+          <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <span class="reviews-count" style="margin-left:8px">Basierend auf 43 Bewertungen</span>
+        </div>
+      </div>
+      <a href="https://www.google.com/maps/search/KAGU+E-BIKES+Moormerland" target="_blank" rel="noopener noreferrer" class="reviews-link animate d3">
+        Alle Bewertungen auf Google
+        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card animate d1">
+        <div class="review-card-stars">
+          <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <p class="review-quote">„Der Inhaber war super! Er hat uns sehr gut, freundlich, geduldig und sehr kompetent beraten und hat auch nicht versucht uns irgendwas anzudrehen, nur um was zu verkaufen. Ich würde auf jeden Fall wieder ein Fahrrad hier kaufen 😀"</p>
+        <div class="review-footer"><span class="review-author">Artur Wist</span><span class="review-date">vor 6 Monaten</span></div>
+        <div class="review-google"><div class="review-google-dot">G</div>Verifizierte Google-Bewertung</div>
+      </div>
+      <div class="review-card animate d2">
+        <div class="review-card-stars">
+          <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <p class="review-quote">„Waren heute ganz spontan da, um ein Rad zu probieren. Eine sehr nette Beratung und ein gutes Gespräch. 6 Räder weiter war das perfekte Fahrrad gefunden. Sehr kompetenter und angenehmer Verkäufer!"</p>
+        <div class="review-footer"><span class="review-author">L G · Local Guide</span><span class="review-date">vor einem Jahr</span></div>
+        <div class="review-google"><div class="review-google-dot">G</div>Verifizierte Google-Bewertung</div>
+      </div>
+      <div class="review-card animate d3">
+        <div class="review-card-stars">
+          <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <p class="review-quote">„Ich habe dort ein Pegasus E-Bike gekauft, das Fahrrad war in einem Top-Zustand. Sehr zufrieden mit dem Kauf und der freundlichen Beratung."</p>
+        <div class="review-footer"><span class="review-author">Heinrich Cordes</span><span class="review-date">vor einem Jahr</span></div>
+        <div class="review-google"><div class="review-google-dot">G</div>Verifizierte Google-Bewertung</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FINAL CTA ═══════════════════ -->
+<section class="final-cta">
+  <div class="container">
+    <div class="final-cta-inner">
+      <div class="final-cta-badge animate"><div class="final-cta-badge-dot"></div>Jetzt verfügbar</div>
+      <h2 class="animate d1">Bereit für Ihr<br><span>perfektes E-Bike?</span></h2>
+      <p class="animate d2">Rufen Sie uns an oder kommen Sie einfach vorbei – wir freuen uns auf Sie. Probefahrt jederzeit möglich.</p>
+      <div class="final-cta-btns animate d3">
+        <a href="tel:015205161641" class="btn-cta-big">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.6 19.79 19.79 0 01.82 2.06 2 2 0 012.82 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.25v1.67z"/></svg>
           01520 5161641
         </a>
-        <button class="hamburger" id="hamburger" aria-label="Menü">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-    <div class="mobile-menu" id="mobile-menu">
-      <div class="container" style="display:flex;flex-direction:column;gap:4px;">
-        <a href="#leistungen" class="mobile-link">Leistungen</a>
-        <a href="#ueber-uns" class="mobile-link">Über uns</a>
-        <a href="#bewertungen" class="mobile-link">Bewertungen</a>
-        <a href="tel:015205161641" style="display:flex;align-items:center;justify-content:center;gap:8px;height:48px;background:var(--orange);color:white;font-weight:600;border-radius:12px;text-decoration:none;margin-top:8px;">
-          📞 01520 5161641
+        <a href="https://www.google.com/maps/search/Hauptstra%C3%9Fe+169+26802+Moormerland" target="_blank" rel="noopener noreferrer" class="btn-cta-ghost">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Hauptstraße 169, Moormerland
         </a>
       </div>
-    </div>
-  </nav>
-
-  <main>
-    <!-- ─── HERO ─── -->
-    <section class="hero">
-      <div class="hero-lines"></div>
-      <div class="hero-scan"></div>
-
-      <!-- Animated spinning bicycle wheel (background) -->
-      <div class="hero-wheel-wrap" aria-hidden="true">
-        <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Outer rim - spins slow -->
-          <g class="hero-wheel-outer" style="transform-origin:300px 300px">
-            <circle cx="300" cy="300" r="270" stroke="rgba(14,165,233,0.5)" stroke-width="12"/>
-            <circle cx="300" cy="300" r="255" stroke="rgba(14,165,233,0.15)" stroke-width="3"/>
-            <!-- Spokes -->
-            <line x1="300" y1="30" x2="300" y2="570" stroke="rgba(14,165,233,0.35)" stroke-width="4"/>
-            <line x1="30" y1="300" x2="570" y2="300" stroke="rgba(14,165,233,0.35)" stroke-width="4"/>
-            <line x1="109" y1="109" x2="491" y2="491" stroke="rgba(14,165,233,0.25)" stroke-width="3"/>
-            <line x1="491" y1="109" x2="109" y2="491" stroke="rgba(14,165,233,0.25)" stroke-width="3"/>
-            <line x1="62" y1="190" x2="538" y2="410" stroke="rgba(14,165,233,0.15)" stroke-width="2"/>
-            <line x1="538" y1="190" x2="62" y2="410" stroke="rgba(14,165,233,0.15)" stroke-width="2"/>
-            <line x1="190" y1="62" x2="410" y2="538" stroke="rgba(14,165,233,0.15)" stroke-width="2"/>
-            <line x1="410" y1="62" x2="190" y2="538" stroke="rgba(14,165,233,0.15)" stroke-width="2"/>
-          </g>
-          <!-- Inner gear ring - spins opposite -->
-          <g class="hero-wheel-inner" style="transform-origin:300px 300px">
-            <circle cx="300" cy="300" r="60" stroke="rgba(14,165,233,0.6)" stroke-width="8"/>
-            <circle cx="300" cy="300" r="40" stroke="rgba(249,115,22,0.5)" stroke-width="5"/>
-            <!-- Gear teeth -->
-            <circle cx="300" cy="230" r="10" fill="rgba(14,165,233,0.4)"/>
-            <circle cx="300" cy="370" r="10" fill="rgba(14,165,233,0.4)"/>
-            <circle cx="230" cy="300" r="10" fill="rgba(14,165,233,0.4)"/>
-            <circle cx="370" cy="300" r="10" fill="rgba(14,165,233,0.4)"/>
-            <circle cx="250" cy="250" r="8" fill="rgba(14,165,233,0.3)"/>
-            <circle cx="350" cy="250" r="8" fill="rgba(14,165,233,0.3)"/>
-            <circle cx="250" cy="350" r="8" fill="rgba(14,165,233,0.3)"/>
-            <circle cx="350" cy="350" r="8" fill="rgba(14,165,233,0.3)"/>
-          </g>
-          <!-- Hub -->
-          <circle cx="300" cy="300" r="20" fill="rgba(249,115,22,0.7)"/>
-          <circle cx="300" cy="300" r="10" fill="rgba(249,115,22,1)"/>
-        </svg>
-      </div>
-
-      <div class="container">
-        <div class="hero-content">
-          <div class="hero-badge animate">
-            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            4,9 von 5 – 43 Google-Bewertungen
-          </div>
-          <h1 class="hero-title animate animate-delay-1">
-            Ihr E-Bike-<span class="accent">Spezialist.</span>
-          </h1>
-          <p class="hero-sub animate animate-delay-2">
-            E-Bikes kaufen, testen und liefern lassen – in Moormerland. Gazelle, Pegasus und mehr. Persönliche Beratung ohne Verkaufsdruck.
-          </p>
-          <div class="hero-ctas animate animate-delay-3">
-            <a href="tel:015205161641" class="btn-primary">
-              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.6 19.79 19.79 0 01.82 2.06 2 2 0 012.82 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.25v1.67z"/></svg>
-              Jetzt anrufen
-            </a>
-            <a href="https://www.google.com/maps/search/Hauptstra%C3%9Fe+169+26802+Moormerland" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Route planen
-            </a>
-          </div>
-          <div class="trust-bar animate animate-delay-4">
-            <div class="trust-item">
-              <div class="trust-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
-              Gazelle &amp; Pegasus Partner
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon"><svg viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5 10 7l4 5 2-3 2 8M10 7h4"/></svg></div>
-              Probefahrt möglich
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-              Lieferservice
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="chain-divider"></div>
-
-    <!-- ─── SERVICES ─── -->
-    <section class="services" id="leistungen">
-      <div class="container">
-        <div class="section-header">
-          <div class="animate"><p class="section-overline">Was wir für Sie tun</p></div>
-          <h2 class="section-title animate animate-delay-1">Unsere Leistungen</h2>
-          <p class="section-sub animate animate-delay-2">Von der Probefahrt bis zur Lieferung – wir begleiten Sie auf dem Weg zu Ihrem perfekten E-Bike.</p>
-        </div>
-        <div class="services-grid">
-          <div class="service-card animate animate-delay-1">
-            <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></div>
-            <div class="service-title">E-Bikes kaufen</div>
-            <p class="service-desc">Große Auswahl an City-, Trekking- und Mountain-E-Bikes. Namhafte Hersteller direkt ab Lager.</p>
-          </div>
-          <div class="service-card animate animate-delay-2">
-            <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
-            <div class="service-title">Gazelle E-Bikes</div>
-            <p class="service-desc">Autorisierter Gazelle-Partner. Das volle Sortiment der niederländischen Traditionsmarke.</p>
-          </div>
-          <div class="service-card animate animate-delay-3">
-            <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5 10 7l4 5 2-3 2 8M10 7h4"/></svg></div>
-            <div class="service-title">Probefahrten</div>
-            <p class="service-desc">Testen Sie Ihr Wunsch-E-Bike ausgiebig vor dem Kauf. Einfach vorbeikommen – keine Anmeldung nötig.</p>
-          </div>
-          <div class="service-card animate animate-delay-1">
-            <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-            <div class="service-title">Lieferservice</div>
-            <p class="service-desc">Ihr neues E-Bike wird bequem direkt zu Ihnen nach Hause geliefert.</p>
-          </div>
-          <div class="service-card animate animate-delay-2">
-            <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M16.5 9.4l-9-5.19M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
-            <div class="service-title">Gebrauchträder</div>
-            <p class="service-desc">Geprüfte Gebraucht-E-Bikes in Top-Zustand zu fairen Preisen. Pegasus, Gazelle und mehr.</p>
-          </div>
-          <div class="service-card animate animate-delay-3">
-            <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-            <div class="service-title">Beratung</div>
-            <p class="service-desc">Persönliche, ehrliche Beratung – ohne Verkaufsdruck. Wir helfen Ihnen, das perfekte E-Bike zu finden.</p>
-          </div>
-        </div>
-        <div class="services-cta animate">
-          <p>Noch Fragen zum richtigen E-Bike?</p>
-          <a href="tel:015205161641" class="btn-blue">Einfach anrufen – wir beraten Sie!</a>
-        </div>
-      </div>
-    </section>
-
-    <div class="chain-divider"></div>
-
-    <!-- ─── ABOUT ─── -->
-    <section class="about" id="ueber-uns">
-      <div class="container">
-        <div class="about-grid">
-          <div class="about-text">
-            <div class="animate"><p class="section-overline">Über uns</p></div>
-            <h2 class="section-title animate animate-delay-1">KAGU E-BIKES –<br><span style="color:var(--blue);text-shadow:0 0 30px rgba(14,165,233,0.4)">Ihr Experte</span></h2>
-            <p class="about-body animate animate-delay-2">Bei KAGU E-BIKES in Moormerland finden Sie eine große Auswahl an hochwertigen Elektrofahrrädern. Von City-E-Bikes bis hin zu E-Mountainbikes – wir beraten Sie ehrlich und ohne Verkaufsdruck.</p>
-            <p class="about-body animate animate-delay-3">Kommen Sie einfach vorbei und machen Sie eine Probefahrt. Ihr neues E-Bike liefern wir auch direkt zu Ihnen nach Hause.</p>
-            <div class="stats-row animate animate-delay-2">
-              <div class="stat"><div class="stat-value" data-countup="4.9" data-decimals="1">0</div><div class="stat-label">★ Google</div></div>
-              <div class="stat"><div class="stat-value" data-countup="43" data-decimals="0">0</div><div class="stat-label">Bewertungen</div></div>
-              <div class="stat"><div class="stat-value" style="font-size:2rem;line-height:1.1">E-Bike</div><div class="stat-label">Experte</div></div>
-            </div>
-            <div class="about-actions animate animate-delay-3">
-              <a href="tel:015205161641" class="btn-primary" style="height:48px;font-size:14px;">
-                <svg style="width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.6 19.79 19.79 0 01.82 2.06 2 2 0 012.82 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.25v1.67z"/></svg>
-                01520 5161641
-              </a>
-              <a href="https://www.google.com/maps/search/Hauptstra%C3%9Fe+169+26802+Moormerland" target="_blank" rel="noopener noreferrer" class="btn-outline">
-                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Hauptstraße 169, Moormerland
-              </a>
-            </div>
-          </div>
-          <div class="about-visual animate animate-delay-2">
-            <!-- Spinning gear decoration -->
-            <svg class="about-gear" viewBox="0 0 200 200" fill="none">
-              <circle cx="100" cy="100" r="80" stroke="#0ea5e9" stroke-width="6"/>
-              <circle cx="100" cy="100" r="55" stroke="#0ea5e9" stroke-width="4"/>
-              <circle cx="100" cy="100" r="20" fill="#0ea5e9"/>
-              <circle cx="100" cy="20" r="12" fill="#0ea5e9"/><circle cx="100" cy="180" r="12" fill="#0ea5e9"/>
-              <circle cx="20" cy="100" r="12" fill="#0ea5e9"/><circle cx="180" cy="100" r="12" fill="#0ea5e9"/>
-              <circle cx="43" cy="43" r="10" fill="#0ea5e9"/><circle cx="157" cy="43" r="10" fill="#0ea5e9"/>
-              <circle cx="43" cy="157" r="10" fill="#0ea5e9"/><circle cx="157" cy="157" r="10" fill="#0ea5e9"/>
-            </svg>
-            <div class="about-card">
-              <div class="about-card-dots"></div>
-              <div class="about-illustration">
-                <svg viewBox="0 0 340 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="170" cy="80" r="50" stroke="#0ea5e9" stroke-width="8"/>
-                  <path d="M120 160 Q170 140 220 160 L240 280 H100 Z" stroke="#0ea5e9" stroke-width="7" fill="none" stroke-linejoin="round"/>
-                  <path d="M120 170 Q90 200 75 240" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round" fill="none"/>
-                  <path d="M220 170 Q250 200 265 240" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round" fill="none"/>
-                  <path d="M130 280 L115 370" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round"/>
-                  <path d="M210 280 L225 370" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round"/>
-                  <path d="M108 370 L130 370" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round"/>
-                  <path d="M218 370 L240 370" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round"/>
-                  <path d="M265 240 Q275 230 285 235 L310 260 Q315 268 308 275 L295 288 Q287 293 280 286 L255 261 Z" stroke="#f97316" stroke-width="6" fill="none" stroke-linejoin="round"/>
-                  <line x1="290" y1="270" x2="330" y2="310" stroke="#f97316" stroke-width="7" stroke-linecap="round"/>
-                  <path d="M152 88 Q170 102 188 88" stroke="#0ea5e9" stroke-width="5" stroke-linecap="round" fill="none"/>
-                  <circle cx="155" cy="72" r="5" fill="#0ea5e9"/>
-                  <circle cx="185" cy="72" r="5" fill="#0ea5e9"/>
-                </svg>
-              </div>
-              <div class="about-caption">
-                <div class="about-caption-inner">
-                  <small>Foto folgt</small>
-                  <strong>Ihr KAGU E-BIKES Team</strong>
-                  <span>Hauptstraße 169, Moormerland</span>
-                </div>
-              </div>
-            </div>
-            <div class="about-badge">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
-              <div class="about-badge-text"><strong>Ihr E-Bike-Experte</strong><small>in Moormerland</small></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="chain-divider"></div>
-
-    <!-- ─── REVIEWS ─── -->
-    <section class="reviews" id="bewertungen">
-      <div class="container">
-        <div class="animate"><p class="section-overline">Was unsere Kunden sagen</p></div>
-        <h2 class="section-title animate animate-delay-1">4,9 Sterne auf Google</h2>
-        <div class="reviews-meta animate animate-delay-2">
-          <div class="stars">
-            <svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <span class="reviews-meta-text">Basierend auf 43 Bewertungen</span>
-          <a href="https://www.google.com/maps/search/KAGU+E-BIKES+Moormerland" target="_blank" rel="noopener noreferrer" class="reviews-link">
-            Alle Bewertungen auf Google
-            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-        <div class="reviews-grid">
-          <div class="review-card animate animate-delay-1">
-            <div class="review-stars"><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-            <p class="review-text">"Der Inhaber war super! Er hat uns sehr gut, freundlich, geduldig und sehr kompetent beraten und hat auch nicht versucht uns irgendwas anzudrehen, nur um was zu verkaufen. Ich würde auf jeden Fall wieder ein Fahrrad hier kaufen 😀"</p>
-            <div class="review-footer"><span class="review-author">Artur Wist</span><span class="review-date">vor 6 Monaten</span></div>
-          </div>
-          <div class="review-card animate animate-delay-2">
-            <div class="review-stars"><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-            <p class="review-text">"Waren heute ganz spontan da, um ein Rad zu probieren. Eine sehr nette Beratung und ein gutes Gespräch. 6 Räder weiter war das perfekte Fahrrad gefunden. Sehr kompetenter und angenehmer Verkäufer!"</p>
-            <div class="review-footer"><span class="review-author">L G</span><span class="review-date">vor einem Jahr</span></div>
-          </div>
-          <div class="review-card animate animate-delay-3">
-            <div class="review-stars"><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="review-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-            <p class="review-text">"Ich habe dort ein Pegasus E-Bike gekauft, das Fahrrad war in einem Top-Zustand. Sehr zufrieden mit dem Kauf und der freundlichen Beratung."</p>
-            <div class="review-footer"><span class="review-author">Heinrich Cordes</span><span class="review-date">vor einem Jahr</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ─── FOOTER ─── -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div style="display:flex;align-items:center;gap:10px;">
-            <div class="logo-icon"><svg viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5 10 7l4 5 2-3 2 8M10 7h4"/></svg></div>
-            <span style="font-weight:700;font-size:16px;color:var(--text);">KAGU E-BIKES</span>
-          </div>
-          <p class="footer-tagline">Ihr persönlicher E-Bike-Spezialist in Moormerland. Gazelle, Pegasus und mehr – mit ehrlicher Beratung.</p>
-          <div class="footer-stars">
-            <svg class="footer-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="footer-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="footer-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="footer-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="footer-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <span class="footer-rating-text">4,9 (43 Bewertungen)</span>
-          </div>
-        </div>
-        <div>
-          <p class="footer-heading">Kontakt &amp; Anfahrt</p>
-          <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" style="stroke:var(--blue)"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.6 19.79 19.79 0 01.82 2.06 2 2 0 012.82 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.25v1.67z"/></svg>
-            <a href="tel:015205161641" class="footer-phone">01520 5161641</a>
-          </div>
-          <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <p class="footer-addr">Hauptstraße 169<br>26802 Moormerland</p>
-          </div>
-          <a href="https://www.google.com/maps/search/Hauptstra%C3%9Fe+169+26802+Moormerland" target="_blank" rel="noopener noreferrer" class="footer-maps">
-            Route planen
-            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-        <div>
-          <p class="footer-heading">Öffnungszeiten</p>
-          <div class="footer-hours-item">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span class="footer-hours-days">Öffnungszeiten</span>
-            <span class="footer-hours-time">Bitte anfragen</span>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 KAGU E-BIKES. Alle Rechte vorbehalten.</span>
-        <a href="#impressum">Impressum</a>
+      <div class="final-note animate d4">
+        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Kostenlose Probefahrt</span>
+        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Keine Wartezeit</span>
+        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Lieferung möglich</span>
+        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Kreditkarte akzeptiert</span>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
+</main>
 
-  <script>
-    // Navbar scroll
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 30);
-    }, { passive: true });
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <div class="logo-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5 10 7l4 5 2-3 2 8M10 7h4"/></svg></div>
+          <strong>KAGU E-BIKES</strong>
+        </div>
+        <p class="footer-tagline">Ihr persönlicher E-Bike-Spezialist in Moormerland. Gazelle, Pegasus und mehr – mit ehrlicher Beratung und persönlichem Service.</p>
+        <div class="footer-rating">
+          <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <span class="footer-rating-txt">4,9 (43 Bewertungen)</span>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Kontakt &amp; Anfahrt</p>
+        <div class="footer-row">
+          <svg viewBox="0 0 24 24" style="stroke:var(--blue)"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.6 19.79 19.79 0 01.82 2.06 2 2 0 012.82 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.25v1.67z"/></svg>
+          <a href="tel:015205161641" class="footer-phone">01520 5161641</a>
+        </div>
+        <div class="footer-row">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <p class="footer-addr">Hauptstraße 169<br>26802 Moormerland</p>
+        </div>
+        <a href="https://www.google.com/maps/search/Hauptstra%C3%9Fe+169+26802+Moormerland" target="_blank" rel="noopener noreferrer" class="footer-ext">
+          Route planen
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+      <div>
+        <p class="footer-heading">Öffnungszeiten</p>
+        <div class="footer-hours-row">
+          <span class="footer-hours-days">Öffnungszeiten</span>
+          <span class="footer-hours-time">Bitte anfragen</span>
+        </div>
+        <div style="margin-top:20px;padding:14px;background:var(--blue-dim);border:1px solid var(--border-blue);border-radius:12px">
+          <p style="font-size:12px;color:var(--text-muted);line-height:1.7">Rufen Sie uns an oder kommen Sie einfach vorbei – wir sind gerne für Sie da.</p>
+          <a href="tel:015205161641" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:600;color:var(--blue);text-decoration:none">
+            <svg style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 10.6 19.79 19.79 0 01.82 2.06 2 2 0 012.82 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.25v1.67z"/></svg>
+            01520 5161641
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 KAGU E-BIKES. Alle Rechte vorbehalten.</span>
+      <a href="#impressum">Impressum</a>
+    </div>
+  </div>
+</footer>
 
-    // Mobile menu
-    document.getElementById('hamburger').addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.toggle('open');
+<script>
+  // Navbar scroll
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 30), {passive:true});
+
+  // Mobile menu
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-link').forEach(a => a.addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.remove('open');
+  }));
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.animate').forEach(el => obs.observe(el));
+
+  // Fire hero immediately
+  setTimeout(() => document.querySelectorAll('.hero .animate').forEach(el => el.classList.add('visible')), 60);
+
+  // Count-up
+  function countUp(el, end, dec, dur) {
+    let t0 = null;
+    const step = ts => {
+      if(!t0) t0 = ts;
+      const p = Math.min((ts - t0) / dur, 1);
+      const v = end * (1 - Math.pow(1 - p, 3));
+      el.textContent = dec > 0 ? v.toFixed(dec) : Math.floor(v);
+      if(p < 1) requestAnimationFrame(step);
+      else el.textContent = dec > 0 ? end.toFixed(dec) : end;
+    };
+    requestAnimationFrame(step);
+  }
+  const cuObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        const el = e.target;
+        countUp(el, parseFloat(el.dataset.countup), parseInt(el.dataset.dec||0), 1400);
+        cuObs.unobserve(el);
+      }
     });
-    document.querySelectorAll('.mobile-link').forEach(el => {
-      el.addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open'));
-    });
-
-    // Scroll-reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.animate').forEach(el => observer.observe(el));
-
-    // Hero animations on load
-    setTimeout(() => {
-      document.querySelectorAll('.hero .animate').forEach(el => el.classList.add('visible'));
-    }, 80);
-
-    // Count-up
-    function countUp(el, end, decimals, duration) {
-      let startTime = null;
-      const step = (ts) => {
-        if (!startTime) startTime = ts;
-        const p = Math.min((ts - startTime) / duration, 1);
-        const e = 1 - Math.pow(1 - p, 3);
-        el.textContent = decimals > 0 ? (e * end).toFixed(decimals) : Math.floor(e * end);
-        if (p < 1) requestAnimationFrame(step);
-        else el.textContent = decimals > 0 ? end.toFixed(decimals) : end;
-      };
-      requestAnimationFrame(step);
-    }
-    const countObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          countUp(el, parseFloat(el.dataset.countup), parseInt(el.dataset.decimals || 0), 1400);
-          countObs.unobserve(el);
-        }
-      });
-    }, { threshold: 0.5 });
-    document.querySelectorAll('[data-countup]').forEach(el => countObs.observe(el));
-  </script>
+  }, {threshold: 0.5});
+  document.querySelectorAll('[data-countup]').forEach(el => cuObs.observe(el));
+</script>
 </body>
 </html>
